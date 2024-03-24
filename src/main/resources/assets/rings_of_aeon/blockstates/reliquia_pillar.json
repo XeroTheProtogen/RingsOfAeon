@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "rings_of_aeon:block/reliquia_pillar_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "rings_of_aeon:block/reliquia_pillar"
+    },
+    "axis=z": {
+      "model": "rings_of_aeon:block/reliquia_pillar_horizontal",
+      "x": 90
+    }
+  }
+}
