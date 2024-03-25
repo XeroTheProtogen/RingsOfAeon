@@ -18,6 +18,7 @@ public class ModItemGroup {
                     .entries(((displayContext, entries) -> {
                         entries.add(ModCommonRegistry.RELIQUIA_PILLAR);
                         entries.add(ModCommonRegistry.BLOOD_RUSH);
+                        entries.add(ModCommonRegistry.DEVIL_FORTUNE);
                     })).build());
 
     public static void registerItemGroups() {

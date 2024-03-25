@@ -2,6 +2,7 @@ package keno.net.rings_of_aeon.registries;
 
 import keno.net.rings_of_aeon.RingsOfAeon;
 import keno.net.rings_of_aeon.items.BloodRushItem;
+import keno.net.rings_of_aeon.items.DevilsFortuneItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -14,9 +15,14 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
 public class ModCommonRegistry {
+    //Items
     public static final Item BLOOD_RUSH = registerItems("blood_rush",
-            new BloodRushItem(ToolMaterials.IRON, 6, 1.4f, new FabricItemSettings().maxCount(1).maxDamage(255)));
+            new BloodRushItem(ToolMaterials.IRON, 4, 1f, new FabricItemSettings().maxCount(1).maxDamage(255)));
 
+    public static final Item DEVIL_FORTUNE = registerItems("devil_fortune",
+            new DevilsFortuneItem(ToolMaterials.STONE, 3, 1f, new FabricItemSettings().maxCount(1).maxDamage(128)));
+
+    //Blocks
     public static final Block RELIQUIA_PILLAR = registerBlock("reliquia_pillar",
             new PillarBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_PILLAR).sounds(BlockSoundGroup.DEEPSLATE_BRICKS)));
 
