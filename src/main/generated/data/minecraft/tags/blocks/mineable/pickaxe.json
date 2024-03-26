@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "rings_of_aeon:reliquia_pillar"
+    "rings_of_aeon:reliquia_pillar",
+    "rings_of_aeon:reliquia_brick",
+    "rings_of_aeon:reliquia_stair"
   ]
 }

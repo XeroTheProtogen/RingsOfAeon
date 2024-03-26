@@ -5,9 +5,7 @@ import keno.net.rings_of_aeon.items.BloodRushItem;
 import keno.net.rings_of_aeon.items.DevilsFortuneItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.PillarBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -23,8 +21,18 @@ public class ModCommonRegistry {
             new DevilsFortuneItem(ToolMaterials.STONE, 3, 1f, new FabricItemSettings().maxCount(1).maxDamage(128)));
 
     //Blocks
+    static final FabricBlockSettings RELIQUIA_DEFAULT = FabricBlockSettings.copyOf(Blocks.BRICKS).sounds(BlockSoundGroup.DEEPSLATE_BRICKS).mapColor(MapColor.STONE_GRAY);
     public static final Block RELIQUIA_PILLAR = registerBlock("reliquia_pillar",
             new PillarBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_PILLAR).sounds(BlockSoundGroup.DEEPSLATE_BRICKS)));
+    public static final Block RELIQUIA_BRICK = registerBlock("reliquia_brick",
+            new Block(RELIQUIA_DEFAULT));
+    public static final Block RELIQUIA_STAIR = registerBlock("reliquia_stair",
+            new StairsBlock(ModCommonRegistry.RELIQUIA_BRICK.getDefaultState(), RELIQUIA_DEFAULT));
+    public static final Block RELIQUIA_SLAB = registerBlock("reliquia_slab",
+            new SlabBlock(RELIQUIA_DEFAULT));
+    public static final Block RELIQUIA_WALL = registerBlock("reliquia_wall",
+            new WallBlock(RELIQUIA_DEFAULT));
+
 
     //Registry Methods
     private static Item registerItems(String name, Item item) {

@@ -17,7 +17,11 @@ public class ModModelGen extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+        BlockStateModelGenerator.BlockTexturePool reliquiaBrickTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModCommonRegistry.RELIQUIA_BRICK);
         blockStateModelGenerator.registerAxisRotated(ModCommonRegistry.RELIQUIA_PILLAR, new Identifier(RingsOfAeon.MODID, "block/reliquia_pillar"));
+        reliquiaBrickTexturePool.stairs(ModCommonRegistry.RELIQUIA_STAIR);
+        reliquiaBrickTexturePool.slab(ModCommonRegistry.RELIQUIA_SLAB);
+        reliquiaBrickTexturePool.wall(ModCommonRegistry.RELIQUIA_WALL);
     }
 
     @Override

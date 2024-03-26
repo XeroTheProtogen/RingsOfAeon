@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "rings_of_aeon:block/reliquia_brick"
+  }
+}
