@@ -26,6 +26,6 @@ public class ModModelGen extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(ModCommonRegistry.DEVIL_FORTUNE, Models.GENERATED);
+        itemModelGenerator.register(ModCommonRegistry.FRAGMEN_POLEARM, Models.GENERATED);
     }
 }

@@ -11,6 +11,8 @@ import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
@@ -36,8 +38,10 @@ public class DevilsFortuneItem extends SwordItem {
                 if (stack.getNbt().getInt(NBT) <= 4) {
                     applyEffectToUser(player, stack);
                 } else if (stack.getNbt().getInt(NBT) == 5) {
+                    user.playSound(SoundEvents.ENTITY_PLAYER_LEVELUP, SoundCategory.NEUTRAL, 0.8f, 1f);
                     jackpot(player, stack);
                 } else if (stack.getNbt().getInt(NBT) == 6) {
+                    user.playSound(SoundEvents.ENTITY_WARDEN_ROAR, SoundCategory.NEUTRAL, 0.8f, 1f);
                     foolsJackpot(player, stack);
                 }
             }
@@ -54,7 +58,6 @@ public class DevilsFortuneItem extends SwordItem {
                     new StatusEffectInstance(StatusEffects.WEAKNESS, TimeConversion.secondsToTicks(10)),
                     new StatusEffectInstance(StatusEffects.WITHER, TimeConversion.secondsToTicks(5))
             ).toList();
-
             int data = stack.getNbt().getInt(NBT) - 1;
             user.addStatusEffect(statusEffects.get(data));
             setDrawnFortune(stack, true);

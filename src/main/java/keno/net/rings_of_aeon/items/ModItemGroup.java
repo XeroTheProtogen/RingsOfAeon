@@ -23,6 +23,8 @@ public class ModItemGroup {
                         entries.add(ModCommonRegistry.RELIQUIA_BRICK);
                         entries.add(ModCommonRegistry.RELIQUIA_STAIR);
                         entries.add(ModCommonRegistry.RELIQUIA_WALL);
+                        entries.add(ModCommonRegistry.RELIQUIA_SLAB);
+                        entries.add(ModCommonRegistry.FRAGMEN_POLEARM);
                     })).build());
 
     public static final RegistryKey<ItemGroup> RUIN_CALL_KEY = getItemGroupKey(RUINOUS_CALL);
@@ -30,6 +32,7 @@ public class ModItemGroup {
     public static void registerItemGroups() {
         RingsOfAeon.LOGGER.info("Registering Item Groups for " + RingsOfAeon.MODID);
     }
+
     public static RegistryKey<ItemGroup> getItemGroupKey(ItemGroup group) {
         return Registries.ITEM_GROUP.getKey(group).get();
     }

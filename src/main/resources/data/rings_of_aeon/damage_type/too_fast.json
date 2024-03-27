@@ -1,0 +1,6 @@
+{
+  "effects": "burning",
+  "exhaustion": 0.2,
+  "message_id": "tooFast",
+  "scaling": "always"
+}

@@ -1,10 +1,10 @@
 {
-	"required": true,
-	"package": "keno.net.rings_of_aeon.mixin",
-	"compatibilityLevel": "JAVA_17",
-	"mixins": [
-	],
-	"injectors": {
-		"defaultRequire": 1
+  "required": true,
+  "package": "keno.net.rings_of_aeon.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
 	}
 }

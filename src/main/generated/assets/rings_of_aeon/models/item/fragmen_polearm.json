@@ -1,0 +1,36 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "rings_of_aeon:item/fragmen_polearm"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "translation": [0, -2, 0],
+      "rotation": [0, -90, 0],
+      "scale": [0.6,1.5,1]
+    },
+    "thirdperson_lefthand": {
+      "translation": [0, -2, 0],
+      "rotation": [0, -90, 0],
+      "scale": [0.6,1.5,1]
+    },
+    "firstperson_righthand": {
+      "translation": [0,-2,0],
+      "scale": [0.6, 1.5, 0.8]
+    },
+    "firstperson_lefthand": {
+      "translation": [0,-2,0],
+      "scale": [0.6, 1.5, 0.8]
+    },
+    "ground": {
+      "translation": [0,3,0],
+      "scale": [0.6,1.5,1]
+    },
+    "gui": {
+      "scale": [0.4, 1.1, 1]
+    },
+    "fixed": {
+      "scale": [0.4, 1.3, 1]
+    }
+  }
+}

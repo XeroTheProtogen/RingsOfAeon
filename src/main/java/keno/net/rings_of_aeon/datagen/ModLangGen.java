@@ -15,6 +15,8 @@ public class ModLangGen extends FabricLanguageProvider {
         generateItemLang(translationBuilder);
         generateBlockLang(translationBuilder);
         generateGroupLang(translationBuilder);
+        translationBuilder.add("spear.damage", "Spear Damage");
+        translationBuilder.add("death.attack.tooFast", "%1$s Went Too Fast To Handle");
     }
 
     private void generateGroupLang(TranslationBuilder builder) {
@@ -24,6 +26,7 @@ public class ModLangGen extends FabricLanguageProvider {
     private void generateItemLang(TranslationBuilder builder) {
         builder.add(ModCommonRegistry.DEVIL_FORTUNE, "Devil's Fortune");
         builder.add(ModCommonRegistry.BLOOD_RUSH, "Blood Rush");
+        builder.add(ModCommonRegistry.FRAGMEN_POLEARM, "Fragmen Spear");
     }
 
     private void generateBlockLang(TranslationBuilder builder) {

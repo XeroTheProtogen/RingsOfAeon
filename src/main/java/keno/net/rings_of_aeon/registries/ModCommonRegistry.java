@@ -3,6 +3,7 @@ package keno.net.rings_of_aeon.registries;
 import keno.net.rings_of_aeon.RingsOfAeon;
 import keno.net.rings_of_aeon.items.BloodRushItem;
 import keno.net.rings_of_aeon.items.DevilsFortuneItem;
+import keno.net.rings_of_aeon.items.FragmenPolearmItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -13,12 +14,14 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
 public class ModCommonRegistry {
+
     //Items
     public static final Item BLOOD_RUSH = registerItems("blood_rush",
-            new BloodRushItem(ToolMaterials.IRON, 4, 1f, new FabricItemSettings().maxCount(1).maxDamage(255)));
-
+            new BloodRushItem(ToolMaterials.IRON, 4, -2.4f, new FabricItemSettings().maxCount(1).maxDamage(255)));
     public static final Item DEVIL_FORTUNE = registerItems("devil_fortune",
-            new DevilsFortuneItem(ToolMaterials.STONE, 3, 1f, new FabricItemSettings().maxCount(1).maxDamage(128)));
+            new DevilsFortuneItem(ToolMaterials.STONE, 3, -2.3f, new FabricItemSettings().maxCount(1).maxDamage(128)));
+    public static final Item FRAGMEN_POLEARM = registerItems("fragmen_polearm",
+            new FragmenPolearmItem(ToolMaterials.IRON, 2,-1.0f,  new FabricItemSettings().maxCount(1).maxDamage(510)));
 
     //Blocks
     static final FabricBlockSettings RELIQUIA_DEFAULT = FabricBlockSettings.copyOf(Blocks.BRICKS).sounds(BlockSoundGroup.DEEPSLATE_BRICKS).mapColor(MapColor.STONE_GRAY);
