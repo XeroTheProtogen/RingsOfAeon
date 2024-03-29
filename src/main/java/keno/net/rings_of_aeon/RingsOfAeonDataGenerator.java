@@ -1,7 +1,7 @@
 package keno.net.rings_of_aeon;
 
 import dev.thomasglasser.sherdsapi.api.data.FabricSherdDatagenSuite;
-import keno.net.rings_of_aeon.datagen.ModBlockModels;
+import keno.net.rings_of_aeon.datagen.ModModelsGen;
 import keno.net.rings_of_aeon.datagen.ModBlockTagGen;
 import keno.net.rings_of_aeon.datagen.ModLangGen;
 import keno.net.rings_of_aeon.registries.RCCommonRegistry;
@@ -18,7 +18,7 @@ public class RingsOfAeonDataGenerator implements DataGeneratorEntrypoint {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 		pack.addProvider(ModBlockTagGen::new);
 		pack.addProvider(ModLangGen::new);
-		pack.addProvider(ModBlockModels::new);
+		pack.addProvider(ModModelsGen::new);
 		registerSherds();
 		suite.build(pack);
 	}

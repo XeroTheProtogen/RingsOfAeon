@@ -6,10 +6,11 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
+import net.minecraft.data.client.Models;
 import net.minecraft.util.Identifier;
 
-public class ModBlockModels extends FabricModelProvider {
-    public ModBlockModels(FabricDataOutput output) {
+public class ModModelsGen extends FabricModelProvider {
+    public ModModelsGen(FabricDataOutput output) {
         super(output);
     }
 
@@ -24,5 +25,7 @@ public class ModBlockModels extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+        itemModelGenerator.register(RCCommonRegistry.FRAGMEN_POTTERY_SHERD, Models.GENERATED);
+        itemModelGenerator.register(RCCommonRegistry.CLOUD_OWL_POTTERY_SHERD, Models.GENERATED);
     }
 }
