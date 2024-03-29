@@ -16,8 +16,4 @@ public class MathUtils {
         }
         return input;
     }
-
-    public static int randomInt(int inner, int outer) {
-        return ThreadLocalRandom.current().nextInt(inner, outer);
-    }
 }
