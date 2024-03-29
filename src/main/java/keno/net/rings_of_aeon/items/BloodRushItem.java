@@ -1,6 +1,6 @@
 package keno.net.rings_of_aeon.items;
 
-import keno.net.rings_of_aeon.registries.ModCommonRegistry;
+import keno.net.rings_of_aeon.registries.RCCommonRegistry;
 import keno.net.rings_of_aeon.util.ItemUtils;
 import keno.net.rings_of_aeon.util.MathUtils;
 import keno.net.rings_of_aeon.util.TimeConversion;
@@ -58,7 +58,7 @@ public class BloodRushItem extends SwordItem {
     }
 
     private void bloodRushHit(PlayerEntity player, LivingEntity target) {
-        if (player.getMainHandStack().getItem() == ModCommonRegistry.BLOOD_RUSH) {
+        if (player.getMainHandStack().getItem() == RCCommonRegistry.BLOOD_RUSH) {
             ItemStack stack = ItemUtils.getHeldItem(player, this);
             if (getStoredHealth(stack) > 0) {
                 player.setHealth(player.getHealth() + getStoredHealth(stack));
@@ -84,7 +84,7 @@ public class BloodRushItem extends SwordItem {
     }
 
     private void setStoredHealth(PlayerEntity player, ItemStack stack, boolean resetCount) {
-        if (ItemUtils.hasPlayerStackInInv(player, ModCommonRegistry.BLOOD_RUSH) && !player.getWorld().isClient) {
+        if (ItemUtils.hasPlayerStackInInv(player, RCCommonRegistry.BLOOD_RUSH) && !player.getWorld().isClient) {
             if (!stack.getNbt().contains(LIFE_ESSENCE, NbtElement.FLOAT_TYPE) || !stack.hasNbt()) {
                 stack.getOrCreateNbt().putFloat(LIFE_ESSENCE, 0);
             }

@@ -1,7 +1,7 @@
 package keno.net.rings_of_aeon.datagen;
 
 import keno.net.rings_of_aeon.items.ModItemGroup;
-import keno.net.rings_of_aeon.registries.ModCommonRegistry;
+import keno.net.rings_of_aeon.registries.RCCommonRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
@@ -24,16 +24,16 @@ public class ModLangGen extends FabricLanguageProvider {
     }
 
     private void generateItemLang(TranslationBuilder builder) {
-        builder.add(ModCommonRegistry.DEVIL_FORTUNE, "Devil's Fortune");
-        builder.add(ModCommonRegistry.BLOOD_RUSH, "Blood Rush");
-        builder.add(ModCommonRegistry.FRAGMEN_POLEARM, "Fragmen Spear");
+        builder.add(RCCommonRegistry.DEVIL_FORTUNE, "Devil's Fortune");
+        builder.add(RCCommonRegistry.BLOOD_RUSH, "Blood Rush");
+        builder.add(RCCommonRegistry.FRAGMEN_POLEARM, "Fragmen Spear");
     }
 
     private void generateBlockLang(TranslationBuilder builder) {
-        builder.add(ModCommonRegistry.RELIQUIA_BRICK, "Reliquia Brick");
-        builder.add(ModCommonRegistry.RELIQUIA_SLAB, "Reliquia Slab");
-        builder.add(ModCommonRegistry.RELIQUIA_WALL, "Reliquia Wall");
-        builder.add(ModCommonRegistry.RELIQUIA_STAIR, "Reliquia Stairs");
-        builder.add(ModCommonRegistry.RELIQUIA_PILLAR, "Reliquia Pillar");
+        builder.add(RCCommonRegistry.RELIQUIA_BRICK, "Reliquia Brick");
+        builder.add(RCCommonRegistry.RELIQUIA_SLAB, "Reliquia Slab");
+        builder.add(RCCommonRegistry.RELIQUIA_WALL, "Reliquia Wall");
+        builder.add(RCCommonRegistry.RELIQUIA_STAIR, "Reliquia Stairs");
+        builder.add(RCCommonRegistry.RELIQUIA_PILLAR, "Reliquia Pillar");
     }
 }

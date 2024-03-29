@@ -1,6 +1,6 @@
 package keno.net.rings_of_aeon.items;
 
-import keno.net.rings_of_aeon.registries.ModCommonRegistry;
+import keno.net.rings_of_aeon.registries.RCCommonRegistry;
 import keno.net.rings_of_aeon.util.ItemUtils;
 import keno.net.rings_of_aeon.util.TimeConversion;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -97,7 +97,7 @@ public class DevilsFortuneItem extends SwordItem {
     }
 
     private void initializeNBT(PlayerEntity player, ItemStack stack) {
-        if (ItemUtils.hasPlayerStackInInv(player, ModCommonRegistry.DEVIL_FORTUNE) && !player.getWorld().isClient()) {
+        if (ItemUtils.hasPlayerStackInInv(player, RCCommonRegistry.DEVIL_FORTUNE) && !player.getWorld().isClient()) {
             if (!stack.hasNbt() || stack.getNbt().contains(NBT, NbtElement.INT_TYPE)) {
                 stack.getOrCreateNbt().putInt(NBT, 0);
             }

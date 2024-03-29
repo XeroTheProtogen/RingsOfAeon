@@ -1,9 +1,10 @@
 package keno.net.rings_of_aeon;
 
 import keno.net.rings_of_aeon.items.ModItemGroup;
-import keno.net.rings_of_aeon.registries.ModCommonRegistry;
+import keno.net.rings_of_aeon.registries.RCCommonRegistry;
 import net.fabricmc.api.ModInitializer;
 
+import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,7 +17,11 @@ public class RingsOfAeon implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		ModCommonRegistry.registerCommonSide();
+		RCCommonRegistry.registerCommonSide();
 		ModItemGroup.registerItemGroups();
+	}
+
+	public static Identifier modLoc(String location) {
+		return new Identifier(MODID, location);
 	}
 }

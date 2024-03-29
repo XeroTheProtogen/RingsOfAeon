@@ -7,6 +7,16 @@ public class MathUtils {
         return inner <= subject && subject <= outer;
     }
 
+    public static float clamp(float min, float input, float max) {
+        if (input <= min) {
+            return min;
+        }
+        else if (input >= max) {
+            return max;
+        }
+        return input;
+    }
+
     public static int randomInt(int inner, int outer) {
         return ThreadLocalRandom.current().nextInt(inner, outer);
     }

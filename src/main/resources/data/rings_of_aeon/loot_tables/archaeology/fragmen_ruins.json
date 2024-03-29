@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:archaeology",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "rings_of_aeon:archaeology/fragmen_ruins"
+}

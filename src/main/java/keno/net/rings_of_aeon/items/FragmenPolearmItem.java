@@ -2,6 +2,7 @@ package keno.net.rings_of_aeon.items;
 
 import keno.net.rings_of_aeon.RingsOfAeon;
 import keno.net.rings_of_aeon.registries.ModDamageTypes;
+import keno.net.rings_of_aeon.util.MathUtils;
 import keno.net.rings_of_aeon.util.TimeConversion;
 import keno.net.rings_of_aeon.util.TimerAccess;
 import net.minecraft.entity.Entity;
@@ -99,7 +100,7 @@ public class FragmenPolearmItem extends SwordItem implements TimerAccess {
     }
 
     public void setSpearDamage(ItemStack stack, float damage) {
-        stack.getNbt().putFloat(POLEARM_DAMAGE, damage);
+        stack.getNbt().putFloat(POLEARM_DAMAGE, MathUtils.clamp(1.5f, damage, 30.0f));
     }
 
     public float getSpearDamage(ItemStack stack) {

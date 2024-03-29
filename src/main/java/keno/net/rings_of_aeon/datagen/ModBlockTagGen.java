@@ -1,6 +1,6 @@
 package keno.net.rings_of_aeon.datagen;
 
-import keno.net.rings_of_aeon.registries.ModCommonRegistry;
+import keno.net.rings_of_aeon.registries.RCCommonRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -16,10 +16,10 @@ public class ModBlockTagGen extends FabricTagProvider.BlockTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
-                .add(ModCommonRegistry.RELIQUIA_PILLAR)
-                .add(ModCommonRegistry.RELIQUIA_BRICK)
-                .add(ModCommonRegistry.RELIQUIA_STAIR)
-                .add(ModCommonRegistry.RELIQUIA_SLAB)
-                .add(ModCommonRegistry.RELIQUIA_WALL);
+                .add(RCCommonRegistry.RELIQUIA_PILLAR)
+                .add(RCCommonRegistry.RELIQUIA_BRICK)
+                .add(RCCommonRegistry.RELIQUIA_STAIR)
+                .add(RCCommonRegistry.RELIQUIA_SLAB)
+                .add(RCCommonRegistry.RELIQUIA_WALL);
     }
 }
