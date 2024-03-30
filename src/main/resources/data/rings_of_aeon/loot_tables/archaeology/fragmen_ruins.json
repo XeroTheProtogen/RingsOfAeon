@@ -4,6 +4,30 @@
     {
       "bonus_rolls": 0.0,
       "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "rings_of_aeon:fragmen_sherd"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "rings_of_aeon:cloud_owl_sherd"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "rings_of_aeon:broken_polearm"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:charcoal"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:flint"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald"
+        }
       ],
       "rolls": 1.0
     }

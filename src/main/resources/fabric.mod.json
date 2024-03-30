@@ -15,10 +15,13 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"keno.net.rings_of_aeon.RingsOfAeon"
+			"keno.net.rings_of_aeon.RuinousCall"
+		],
+		"client": [
+			"keno.net.rings_of_aeon.RCClient"
 		],
 		"fabric-datagen": [
-			"keno.net.rings_of_aeon.RingsOfAeonDataGenerator"
+			"keno.net.rings_of_aeon.RCDataGenerator"
 		]
 	},
 	"mixins": [

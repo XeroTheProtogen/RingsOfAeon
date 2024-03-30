@@ -60,6 +60,7 @@ public class DevilsFortuneItem extends SwordItem {
             ).toList();
             int data = stack.getNbt().getInt(NBT) - 1;
             user.addStatusEffect(statusEffects.get(data));
+            user.playSound(SoundEvents.BLOCK_GRINDSTONE_USE, 0.8f, 0.9f);
             setDrawnFortune(stack, true);
             user.getItemCooldownManager().set(this, TimeConversion.secondsToTicks(30));
         }
@@ -71,6 +72,7 @@ public class DevilsFortuneItem extends SwordItem {
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, TimeConversion.secondsToTicks(40), 3));
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, TimeConversion.secondsToTicks(30)));
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, TimeConversion.secondsToTicks(15), 2));
+            user.playSound(SoundEvents.ENTITY_PLAYER_LEVELUP, SoundCategory.NEUTRAL,0.8f, 1f);
             setDrawnFortune(stack, true);
             user.getItemCooldownManager().set(this, TimeConversion.minutesToTicks(1));
         }
@@ -78,10 +80,11 @@ public class DevilsFortuneItem extends SwordItem {
 
     private void foolsJackpot(PlayerEntity user, ItemStack stack) {
         if (!user.getWorld().isClient()) {
-            user.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, TimeConversion.secondsToTicks(15), 2));
+            user.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, TimeConversion.secondsToTicks(20), 2));
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, TimeConversion.secondsToTicks(10)));
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, TimeConversion.secondsToTicks(5), 2));
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, TimeConversion.secondsToTicks(3)));
+            user.playSound(SoundEvents.ENTITY_WARDEN_ROAR, SoundCategory.NEUTRAL, 0.7f, 1f);
             setDrawnFortune(stack, true);
             user.getItemCooldownManager().set(this, TimeConversion.minutesToTicks(1));
         }

@@ -1,4 +1,5 @@
 {
+  "block.rings_of_aeon.cloud_owl_statue": "Cloud Owl Statue",
   "block.rings_of_aeon.reliquia_brick": "Reliquia Brick",
   "block.rings_of_aeon.reliquia_pillar": "Reliquia Pillar",
   "block.rings_of_aeon.reliquia_slab": "Reliquia Slab",
@@ -6,8 +7,10 @@
   "block.rings_of_aeon.reliquia_wall": "Reliquia Wall",
   "death.attack.tooFast": "%1$s Went Too Fast To Handle",
   "item.rings_of_aeon.blood_rush": "Blood Rush",
+  "item.rings_of_aeon.broken_polearm": "Broken Polearm",
+  "item.rings_of_aeon.cloud_owl_sherd": "Cloud Owl Pottery Sherd",
   "item.rings_of_aeon.devil_fortune": "Devil's Fortune",
   "item.rings_of_aeon.fragmen_polearm": "Fragmen Spear",
-  "itemgroup.ruinous_call": "Ruinous Call",
-  "spear.damage": "Spear Damage"
+  "item.rings_of_aeon.fragmen_sherd": "Fragmen Pottery Sherd",
+  "itemgroup.ruinous_call": "Ruinous Call"
 }

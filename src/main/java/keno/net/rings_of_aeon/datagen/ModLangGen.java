@@ -15,7 +15,6 @@ public class ModLangGen extends FabricLanguageProvider {
         generateItemLang(translationBuilder);
         generateBlockLang(translationBuilder);
         generateGroupLang(translationBuilder);
-        translationBuilder.add("spear.damage", "Spear Damage");
         translationBuilder.add("death.attack.tooFast", "%1$s Went Too Fast To Handle");
     }
 
@@ -27,6 +26,9 @@ public class ModLangGen extends FabricLanguageProvider {
         builder.add(RCCommonRegistry.DEVIL_FORTUNE, "Devil's Fortune");
         builder.add(RCCommonRegistry.BLOOD_RUSH, "Blood Rush");
         builder.add(RCCommonRegistry.FRAGMEN_POLEARM, "Fragmen Spear");
+        builder.add(RCCommonRegistry.CLOUD_OWL_POTTERY_SHERD, "Cloud Owl Pottery Sherd");
+        builder.add(RCCommonRegistry.FRAGMEN_POTTERY_SHERD, "Fragmen Pottery Sherd");
+        builder.add(RCCommonRegistry.BROKEN_POLEARM, "Broken Polearm");
     }
 
     private void generateBlockLang(TranslationBuilder builder) {
@@ -35,5 +37,6 @@ public class ModLangGen extends FabricLanguageProvider {
         builder.add(RCCommonRegistry.RELIQUIA_WALL, "Reliquia Wall");
         builder.add(RCCommonRegistry.RELIQUIA_STAIR, "Reliquia Stairs");
         builder.add(RCCommonRegistry.RELIQUIA_PILLAR, "Reliquia Pillar");
+        builder.add(RCCommonRegistry.CLOUD_OWL_STATUE, "Cloud Owl Statue");
     }
 }

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "X": {
+      "item": "rings_of_aeon:broken_polearm"
+    },
+    "Y": {
+      "item": "minecraft:chain"
+    },
+    "Z": {
+      "tag": "minecraft:logs"
+    }
+  },
+  "pattern": [
+    "X",
+    "Y",
+    "Z"
+  ],
+  "result": {
+    "item": "rings_of_aeon:fragmen_polearm"
+  }
+}

@@ -1,13 +1,11 @@
 package keno.net.rings_of_aeon.items;
 
-import keno.net.rings_of_aeon.RingsOfAeon;
-import keno.net.rings_of_aeon.registries.ModDamageTypes;
+import keno.net.rings_of_aeon.RuinousCall;
 import keno.net.rings_of_aeon.util.MathUtils;
 import keno.net.rings_of_aeon.util.TimeConversion;
 import keno.net.rings_of_aeon.util.TimerAccess;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -20,8 +18,9 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
 public class FragmenPolearmItem extends SwordItem implements TimerAccess {
-    private final String POLEARM_DAMAGE = "nbt." + RingsOfAeon.MODID + ".polearm_damage";
-    private final String COMBO = "nbt." + RingsOfAeon.MODID + "polearm_combo";
+    //TODO fix penalty player damage (Post-release, I'm not having this stop development)
+    private final String POLEARM_DAMAGE = "nbt." + RuinousCall.MODID + ".polearm_damage";
+    private final String COMBO = "nbt." + RuinousCall.MODID + "polearm_combo";
     private int ticks;
 
     public FragmenPolearmItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
@@ -33,6 +32,7 @@ public class FragmenPolearmItem extends SwordItem implements TimerAccess {
         initializeNBT(stack);
         if (entity instanceof PlayerEntity player && !player.getWorld().isClient()) {
             if (player.getMainHandStack().getItem() == this) {
+                spearSpeedPenalty(player, stack);
                 spearTick(player, stack);
             } else {
                 setSpearDamage(stack, 1.5f);
@@ -46,6 +46,7 @@ public class FragmenPolearmItem extends SwordItem implements TimerAccess {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (!world.isClient()) {
             user.removeStatusEffect(StatusEffects.SPEED);
+            user.removeStatusEffect(StatusEffects.HASTE);
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, TimeConversion.secondsToTicks(5)));
             user.getItemCooldownManager().set(this, TimeConversion.secondsToTicks(10));
         }
@@ -54,14 +55,14 @@ public class FragmenPolearmItem extends SwordItem implements TimerAccess {
 
     private void spearSpeedPenalty(PlayerEntity player, ItemStack stack) {
         if (player.getMovementSpeed() >= 0.2f && !player.getWorld().isClient()) {
-            DamageSource source = ModDamageTypes.of(player.getWorld(), ModDamageTypes.TOO_FAST);
-            player.damage(source, 1f);
+            // DamageSource source = ModDamageTypes.of(player.getWorld(), ModDamageTypes.TOO_FAST);\
+            // player.damage(source, 1.0f);
+            // For some reason, the damage won't apply to the player, this gotta be gradle black magic or smth >:(
             stack.damage(1, player, playerEntity -> playerEntity.sendToolBreakStatus(playerEntity.getActiveHand()));
         }
     }
 
     public void spearTick(PlayerEntity player, ItemStack stack) {
-        spearSpeedPenalty(player, stack);
         if (--this.ticks == 0) {
             setSpearDamage(stack, 1.5f);
         } else {
@@ -113,6 +114,7 @@ public class FragmenPolearmItem extends SwordItem implements TimerAccess {
             player.addStatusEffect(new StatusEffectInstance(effect, TimeConversion.secondsToTicks(15), 1));
         } else {
             player.addStatusEffect(new StatusEffectInstance(effect, TimeConversion.secondsToTicks(15), 2));
+            player.addStatusEffect(new StatusEffectInstance(new StatusEffectInstance(StatusEffects.HASTE, TimeConversion.secondsToTicks(10))));
         }
     }
 

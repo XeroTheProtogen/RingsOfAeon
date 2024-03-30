@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "A": {
+      "item": "minecraft:sand"
+    },
+    "B": {
+      "item": "minecraft:flint"
+    },
+    "C": {
+      "item": "minecraft:gravel"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "ABC",
+    "CCC"
+  ],
+  "result": {
+    "item": "rings_of_aeon:reliquia_brick"
+  }
+}

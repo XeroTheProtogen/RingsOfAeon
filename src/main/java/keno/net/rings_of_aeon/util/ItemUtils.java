@@ -18,7 +18,7 @@ public class ItemUtils {
     public static boolean hasPlayerStackInInv(PlayerEntity player, Item item) {
         for (int i = 0; i < player.getInventory().size(); i++) {
             ItemStack currentStack = player.getInventory().getStack(i);
-            if (!currentStack.isEmpty() && currentStack.isOf(item))  {
+            if (!currentStack.isEmpty() && currentStack.isOf(item)) {
                 return true;
             }
 
@@ -27,7 +27,7 @@ public class ItemUtils {
     }
 
     public static int getFirstInventoryIndex(PlayerEntity player, Item item) {
-        for(int i = 0; i < player.getInventory().size(); i++) {
+        for (int i = 0; i < player.getInventory().size(); i++) {
             ItemStack currentStack = player.getInventory().getStack(i);
             if (!currentStack.isEmpty() && currentStack.isOf(item)) {
                 return i;

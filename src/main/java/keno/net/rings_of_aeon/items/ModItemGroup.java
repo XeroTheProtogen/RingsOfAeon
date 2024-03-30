@@ -1,6 +1,6 @@
 package keno.net.rings_of_aeon.items;
 
-import keno.net.rings_of_aeon.RingsOfAeon;
+import keno.net.rings_of_aeon.RuinousCall;
 import keno.net.rings_of_aeon.registries.RCCommonRegistry;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
@@ -13,7 +13,7 @@ import net.minecraft.util.Identifier;
 
 public class ModItemGroup {
     public static final ItemGroup RUINOUS_CALL = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(RingsOfAeon.MODID, "ruinous_call"),
+            new Identifier(RuinousCall.MODID, "ruinous_call"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.ruinous_call"))
                     .icon(() -> new ItemStack(RCCommonRegistry.RELIQUIA_PILLAR))
                     .entries(((displayContext, entries) -> {
@@ -27,12 +27,13 @@ public class ModItemGroup {
                         entries.add(RCCommonRegistry.FRAGMEN_POLEARM);
                         entries.add(RCCommonRegistry.FRAGMEN_POTTERY_SHERD);
                         entries.add(RCCommonRegistry.CLOUD_OWL_POTTERY_SHERD);
+                        entries.add(RCCommonRegistry.CLOUD_OWL_STATUE);
                     })).build());
 
     public static final RegistryKey<ItemGroup> RUIN_CALL_KEY = getItemGroupKey(RUINOUS_CALL);
 
     public static void registerItemGroups() {
-        RingsOfAeon.LOGGER.info("Registering Item Groups for " + RingsOfAeon.MODID);
+        RuinousCall.LOGGER.info("Registering Item Groups for " + RuinousCall.MODID);
     }
 
     public static RegistryKey<ItemGroup> getItemGroupKey(ItemGroup group) {
