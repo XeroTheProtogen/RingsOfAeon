@@ -27,7 +27,6 @@ public class BloodRushItem extends SwordItem {
         super(toolMaterial, attackDamage, attackSpeed, settings);
     }
 
-
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (!world.isClient) {
@@ -83,7 +82,7 @@ public class BloodRushItem extends SwordItem {
         return 1f;
     }
 
-    private void setStoredHealth(PlayerEntity player, ItemStack stack, boolean resetCount) {
+    public void setStoredHealth(PlayerEntity player, ItemStack stack, boolean resetCount) {
         if (ItemUtils.hasPlayerStackInInv(player, RCCommonRegistry.BLOOD_RUSH) && !player.getWorld().isClient) {
             if (!stack.getNbt().contains(LIFE_ESSENCE, NbtElement.FLOAT_TYPE) || !stack.hasNbt()) {
                 stack.getOrCreateNbt().putFloat(LIFE_ESSENCE, 0);
@@ -91,9 +90,9 @@ public class BloodRushItem extends SwordItem {
             NbtCompound data = stack.getNbt();
             if (resetCount) {
                 data.putFloat(LIFE_ESSENCE, 0);
-                return;
+            } else {
+                data.putFloat(LIFE_ESSENCE, player.getHealth() - 1);
             }
-            data.putFloat(LIFE_ESSENCE, player.getHealth() - 1);
             player.setHealth(1f);
         }
     }

@@ -1,4 +1,4 @@
-// 1.20.4	2024-03-30T13:11:00.6673946	Rings of Aeon/Model Definitions
+// 1.20.4	2024-03-30T17:39:56.6507857	Rings of Aeon/Model Definitions
 62610739d972f77beb6a668daf967f962929416c assets\rings_of_aeon\models\item\reliquia_slab.json
 0ddc7e87d3f82f62a950a0ae61f208dbcd00c846 assets\rings_of_aeon\blockstates\reliquia_slab.json
 90aacd914a450e949b72021485c4ecf84db1705b assets\rings_of_aeon\models\block\reliquia_wall_side_tall.json
@@ -11,8 +11,8 @@ b507caef7d19431b6582730a96450721fcc78148 assets\rings_of_aeon\models\block\reliq
 ed8d0f87c49445e17b5ae0810440fc3c73efcd41 assets\rings_of_aeon\models\block\reliquia_stair.json
 b2a16ca1fc0a8ce6d70447c17b65b19b141d0023 assets\rings_of_aeon\models\block\reliquia_slab.json
 77f5a4c8bfc012cf4e4e416ad04d7a62628cf3b4 assets\rings_of_aeon\blockstates\reliquia_wall.json
-5de10eaffd69879d2c378c228fdc0153f3d00e44 assets\rings_of_aeon\blockstates\reliquia_pillar.json
 06d9a73e3f639969ec474223a2f84787be45026d assets\rings_of_aeon\models\block\reliquia_wall_inventory.json
+5de10eaffd69879d2c378c228fdc0153f3d00e44 assets\rings_of_aeon\blockstates\reliquia_pillar.json
 4e76b7970840872661880bfe5ea31fe2509b7b25 assets\rings_of_aeon\models\item\fragmen_sherd.json
 e19dafc64824df963c1aae958aea9039aa13ad23 assets\rings_of_aeon\blockstates\reliquia_brick.json
 9426b9a352c7cf649f87984552d7da621f6334ad assets\rings_of_aeon\blockstates\reliquia_stair.json
