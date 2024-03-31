@@ -28,10 +28,12 @@ public class RCDataGenerator implements DataGeneratorEntrypoint {
 
     private void registerSherds() {
         //Register Sherd Data here
-        suite.makeSherdSuite(RuinousCall.modLoc("fragmen"), getSherdItems(RCCommonRegistry.FRAGMEN_POTTERY_SHERD),
-                RuinousCall.modLoc("fragmen_pottery_pattern"));
-        suite.makeSherdSuite(RuinousCall.modLoc("cloud_owl"), getSherdItems(RCCommonRegistry.CLOUD_OWL_POTTERY_SHERD),
-                RuinousCall.modLoc("cloud_owl_pottery_pattern"));
+        suite.makeSherdSuite(suite.modLoc("fragmen"), getSherdItems(RCCommonRegistry.FRAGMEN_POTTERY_SHERD),
+                suite.modLoc("fragmen_pottery_pattern"));
+        suite.makeSherdSuite(suite.modLoc("cloud_owl"), getSherdItems(RCCommonRegistry.CLOUD_OWL_POTTERY_SHERD),
+                suite.modLoc("cloud_owl_pottery_pattern"));
+        suite.makeSherdSuite(suite.modLoc("unknown_cat"), getSherdItems(RCCommonRegistry.UNKNOWN_CAT_POTTERY_SHERD),
+                suite.modLoc("unknown_cat_pattern"));
     }
 
     private <E> List<E> getSherdItems(E item) {

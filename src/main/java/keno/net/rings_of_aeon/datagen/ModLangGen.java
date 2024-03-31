@@ -28,6 +28,7 @@ public class ModLangGen extends FabricLanguageProvider {
         builder.add(RCCommonRegistry.FRAGMEN_POLEARM, "Fragmen Spear");
         builder.add(RCCommonRegistry.CLOUD_OWL_POTTERY_SHERD, "Cloud Owl Pottery Sherd");
         builder.add(RCCommonRegistry.FRAGMEN_POTTERY_SHERD, "Fragmen Pottery Sherd");
+        builder.add(RCCommonRegistry.UNKNOWN_CAT_POTTERY_SHERD, "Unknown Cat Pottery Sherd");
         builder.add(RCCommonRegistry.BROKEN_POLEARM, "Broken Polearm");
     }
 
@@ -38,5 +39,6 @@ public class ModLangGen extends FabricLanguageProvider {
         builder.add(RCCommonRegistry.RELIQUIA_STAIR, "Reliquia Stairs");
         builder.add(RCCommonRegistry.RELIQUIA_PILLAR, "Reliquia Pillar");
         builder.add(RCCommonRegistry.CLOUD_OWL_STATUE, "Cloud Owl Statue");
+        builder.add(RCCommonRegistry.UNKNOWN_CAT_SKULL, "Unknown Cat Skull");
     }
 }

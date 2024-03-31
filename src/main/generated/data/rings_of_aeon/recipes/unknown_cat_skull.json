@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "item": "rings_of_aeon:unknown_cat_skull"
+    }
+  },
+  "pattern": [
+    "X"
+  ],
+  "result": {
+    "count": 12,
+    "item": "minecraft:bone_meal"
+  }
+}

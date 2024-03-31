@@ -2,6 +2,7 @@ package keno.net.rings_of_aeon.registries;
 
 import keno.net.rings_of_aeon.RuinousCall;
 import keno.net.rings_of_aeon.blocks.CloudOwlStatueBlock;
+import keno.net.rings_of_aeon.blocks.UnknownCatSkullBlock;
 import keno.net.rings_of_aeon.items.BloodRushItem;
 import keno.net.rings_of_aeon.items.DevilsFortuneItem;
 import keno.net.rings_of_aeon.items.FragmenPolearmItem;
@@ -14,7 +15,6 @@ import net.minecraft.item.ToolMaterials;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.Identifier;
 
 public class RCCommonRegistry {
     //Items
@@ -29,12 +29,14 @@ public class RCCommonRegistry {
                     new FabricItemSettings().maxCount(1).maxDamage(600).fireproof()));
     public static final Item BROKEN_POLEARM = registerItem("broken_polearm",
             new Item(new FabricItemSettings().fireproof()));
+    
     //Sherds
-    public static final Item FRAGMEN_POTTERY_SHERD = registerItem("fragmen_sherd", new Item(new FabricItemSettings()));
-    public static final Item CLOUD_OWL_POTTERY_SHERD = registerItem("cloud_owl_sherd", new Item(new FabricItemSettings()));
-
+    public static final Item FRAGMEN_POTTERY_SHERD = registerBasicItem("fragmen_sherd");
+    public static final Item CLOUD_OWL_POTTERY_SHERD = registerBasicItem("cloud_owl_sherd");
+    public static final Item UNKNOWN_CAT_POTTERY_SHERD = registerBasicItem("unknown_cat_sherd"); 
+    
     //Blocks
-    static final FabricBlockSettings RELIQUIA_DEFAULT = FabricBlockSettings.copyOf(Blocks.BRICKS).sounds(BlockSoundGroup.DEEPSLATE_BRICKS).mapColor(MapColor.STONE_GRAY);
+    static final FabricBlockSettings RELIQUIA_DEFAULT = FabricBlockSettings.copyOf(Blocks.BRICKS).sounds(BlockSoundGroup.DEEPSLATE_BRICKS).mapColor(MapColor.TERRACOTTA_RED).requiresTool();
     public static final Block RELIQUIA_PILLAR = registerBlock("reliquia_pillar",
             new PillarBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_PILLAR).sounds(BlockSoundGroup.DEEPSLATE_BRICKS)));
     public static final Block RELIQUIA_BRICK = registerBlock("reliquia_brick",
@@ -47,21 +49,29 @@ public class RCCommonRegistry {
             new WallBlock(RELIQUIA_DEFAULT));
     public static final Block CLOUD_OWL_STATUE = registerBlock("cloud_owl_statue",
             new CloudOwlStatueBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).dynamicBounds()
-                    .burnable()));
+                    .burnable().dropsLike(Blocks.OAK_PLANKS).nonOpaque()));
+    public static final Block UNKNOWN_CAT_SKULL = registerBlock("unknown_cat_skull",
+            new UnknownCatSkullBlock(FabricBlockSettings.copyOf(Blocks.STONE).dynamicBounds()
+                    .nonOpaque().sounds(BlockSoundGroup.BONE).requiresTool()));
 
-
+    private static Item registerBasicItem(String name) {
+        // If an item doesn't need any special settings or custom Item subclass (Example: Crafting materials),
+        // register here
+        return Registry.register(Registries.ITEM, RuinousCall.modLoc(name), new Item(new FabricItemSettings()));
+    }
+    
     private static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, new Identifier(RuinousCall.MODID, name), item);
+        // If you need to add Item Settings or pass a custom Item subclass, register here
+        return Registry.register(Registries.ITEM, RuinousCall.modLoc(name), item);
     }
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, new Identifier(RuinousCall.MODID, name),
-                block);
+        return Registry.register(Registries.BLOCK, RuinousCall.modLoc(name), block);
     }
 
     private static Item registerBlockItem(String name, Block block) {
-        return Registry.register(Registries.ITEM, new Identifier(RuinousCall.MODID, name),
+        return Registry.register(Registries.ITEM, RuinousCall.modLoc(name),
                 new BlockItem(block, new FabricItemSettings()));
     }
 

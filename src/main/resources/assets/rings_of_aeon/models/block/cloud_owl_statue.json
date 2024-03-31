@@ -1,6 +1,5 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "rings_of_aeon:block/cloud_owl_statue",
 	"texture_size": [64, 64],
 	"textures": {
 		"1": "rings_of_aeon:block/cloud_owl_statue",

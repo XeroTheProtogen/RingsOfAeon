@@ -20,6 +20,9 @@ public class ModBlockTagGen extends FabricTagProvider.BlockTagProvider {
                 .add(RCCommonRegistry.RELIQUIA_BRICK)
                 .add(RCCommonRegistry.RELIQUIA_STAIR)
                 .add(RCCommonRegistry.RELIQUIA_SLAB)
-                .add(RCCommonRegistry.RELIQUIA_WALL);
+                .add(RCCommonRegistry.RELIQUIA_WALL)
+                .add(RCCommonRegistry.UNKNOWN_CAT_SKULL);
+        getOrCreateTagBuilder(BlockTags.STONE_BRICKS)
+                .add(RCCommonRegistry.RELIQUIA_BRICK);
     }
 }

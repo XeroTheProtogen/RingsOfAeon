@@ -34,7 +34,7 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	modApi include("maven.modrinth:sherdsapi:${project.sherd_version}-fabric")
+	include modImplementation("maven.modrinth:sherdsapi:${project.sherd_version}-fabric")
 	include modImplementation("dev.thomasglasser.tommylib:tommylib-fabric-${minecraft_version}:5.0.1")
 
 	// Uncomment the following line to enable the deprecated Fabric API modules.

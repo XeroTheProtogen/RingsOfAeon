@@ -1,39 +1,28 @@
 package keno.net.rings_of_aeon.blocks;
 
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.ShapeContext;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.BlockMirror;
 import net.minecraft.util.BlockRotation;
-import net.minecraft.util.function.BooleanBiFunction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import org.jetbrains.annotations.Nullable;
 
-public class CloudOwlStatueBlock extends Block {
+public class UnknownCatSkullBlock extends Block {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
-    private static VoxelShape EAST_FACING;
     private static VoxelShape NORTH_FACING;
+    private static VoxelShape EAST_FACING;
 
-    public CloudOwlStatueBlock(Settings settings) {
+    public UnknownCatSkullBlock(Settings settings) {
         super(settings);
-        EAST_FACING = VoxelShapes.combineAndSimplify(Block.createCuboidShape(5, 11, 4, 11, 19, 12),
-                Block.createCuboidShape(5, 0, 4, 11, 11, 12), BooleanBiFunction.OR);
-        NORTH_FACING = VoxelShapes.combineAndSimplify(Block.createCuboidShape(4, 11, 5, 12, 19, 11),
-                Block.createCuboidShape(4, 0, 5, 12, 11, 11), BooleanBiFunction.OR);
-    }
-
-    @Override
-    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return switch (state.get(FACING)) {
-            case NORTH, SOUTH -> NORTH_FACING;
-            case WEST, EAST -> EAST_FACING;
-            default -> super.getOutlineShape(state, world, pos, context);
-        };
+        NORTH_FACING = Block.createCuboidShape(4, 0, 4, 12, 8, 12);
+        EAST_FACING = Block.createCuboidShape(4, 0, 4, 12, 8, 12);
     }
 
     @Nullable
@@ -50,6 +39,15 @@ public class CloudOwlStatueBlock extends Block {
     @Override
     public BlockState mirror(BlockState state, BlockMirror mirror) {
         return state.rotate(mirror.getRotation(state.get(FACING)));
+    }
+
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return switch (state.get(FACING)) {
+            case NORTH, SOUTH -> NORTH_FACING;
+            case EAST, WEST -> EAST_FACING;
+            default -> super.getOutlineShape(state, world, pos, context);
+        };
     }
 
     @Override

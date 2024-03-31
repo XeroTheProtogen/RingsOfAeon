@@ -27,6 +27,7 @@ public class ModModelsGen extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(RCCommonRegistry.FRAGMEN_POTTERY_SHERD, Models.GENERATED);
         itemModelGenerator.register(RCCommonRegistry.CLOUD_OWL_POTTERY_SHERD, Models.GENERATED);
+        itemModelGenerator.register(RCCommonRegistry.UNKNOWN_CAT_POTTERY_SHERD, Models.GENERATED);
         itemModelGenerator.register(RCCommonRegistry.BROKEN_POLEARM, Models.GENERATED);
     }
 }

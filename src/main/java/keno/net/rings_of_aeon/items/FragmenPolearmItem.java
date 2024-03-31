@@ -86,11 +86,14 @@ public class FragmenPolearmItem extends SwordItem implements TimerAccess {
                         player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED,
                                 TimeConversion.secondsToTicks(15), 1));
                     case 10: {
+                        player.removeStatusEffect(StatusEffects.SPEED);
                         player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, TimeConversion.secondsToTicks(15), 2));
                         player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, TimeConversion.secondsToTicks(15)));
                         break;
                     }
-                    case 15: {
+                    case 15, 20, 25, 30: {
+                        player.removeStatusEffect(StatusEffects.SPEED);
+                        player.removeStatusEffect(StatusEffects.HASTE);
                         player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, TimeConversion.secondsToTicks(10), 3));
                         player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, TimeConversion.secondsToTicks(10), 2));
                     }

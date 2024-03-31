@@ -9,5 +9,6 @@ public class RCClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(RCCommonRegistry.CLOUD_OWL_STATUE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(RCCommonRegistry.UNKNOWN_CAT_SKULL, RenderLayer.getCutout());
     }
 }

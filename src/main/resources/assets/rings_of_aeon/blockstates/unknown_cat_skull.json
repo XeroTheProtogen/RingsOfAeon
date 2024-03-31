@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "rings_of_aeon:block/unknown_cat_skull"
+    },
+    "facing=south": {
+      "model": "rings_of_aeon:block/unknown_cat_skull",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "rings_of_aeon:block/unknown_cat_skull",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "rings_of_aeon:block/unknown_cat_skull",
+      "y": 90
+    }
+  }
+}
