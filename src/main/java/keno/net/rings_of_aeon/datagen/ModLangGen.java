@@ -29,6 +29,7 @@ public class ModLangGen extends FabricLanguageProvider {
         builder.add(RCCommonRegistry.CLOUD_OWL_POTTERY_SHERD, "Cloud Owl Pottery Sherd");
         builder.add(RCCommonRegistry.FRAGMEN_POTTERY_SHERD, "Fragmen Pottery Sherd");
         builder.add(RCCommonRegistry.UNKNOWN_CAT_POTTERY_SHERD, "Unknown Cat Pottery Sherd");
+        builder.add(RCCommonRegistry.HUMAN_POTTERY_SHERD, "Human Pottery Sherd");
         builder.add(RCCommonRegistry.BROKEN_POLEARM, "Broken Polearm");
     }
 

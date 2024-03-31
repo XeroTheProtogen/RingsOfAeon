@@ -27,7 +27,10 @@ public class ModItemGroup {
                         entries.add(RCCommonRegistry.FRAGMEN_POLEARM);
                         entries.add(RCCommonRegistry.FRAGMEN_POTTERY_SHERD);
                         entries.add(RCCommonRegistry.CLOUD_OWL_POTTERY_SHERD);
+                        entries.add(RCCommonRegistry.UNKNOWN_CAT_POTTERY_SHERD);
+                        entries.add(RCCommonRegistry.HUMAN_POTTERY_SHERD);
                         entries.add(RCCommonRegistry.CLOUD_OWL_STATUE);
+                        entries.add(RCCommonRegistry.UNKNOWN_CAT_SKULL);
                     })).build());
 
     public static final RegistryKey<ItemGroup> RUIN_CALL_KEY = getItemGroupKey(RUINOUS_CALL);

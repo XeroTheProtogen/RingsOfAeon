@@ -34,7 +34,8 @@ public class RCCommonRegistry {
     public static final Item FRAGMEN_POTTERY_SHERD = registerBasicItem("fragmen_sherd");
     public static final Item CLOUD_OWL_POTTERY_SHERD = registerBasicItem("cloud_owl_sherd");
     public static final Item UNKNOWN_CAT_POTTERY_SHERD = registerBasicItem("unknown_cat_sherd"); 
-    
+    public static final Item HUMAN_POTTERY_SHERD = registerBasicItem("human_sherd");
+
     //Blocks
     static final FabricBlockSettings RELIQUIA_DEFAULT = FabricBlockSettings.copyOf(Blocks.BRICKS).sounds(BlockSoundGroup.DEEPSLATE_BRICKS).mapColor(MapColor.TERRACOTTA_RED).requiresTool();
     public static final Block RELIQUIA_PILLAR = registerBlock("reliquia_pillar",

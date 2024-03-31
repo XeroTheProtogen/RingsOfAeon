@@ -34,6 +34,8 @@ public class RCDataGenerator implements DataGeneratorEntrypoint {
                 suite.modLoc("cloud_owl_pottery_pattern"));
         suite.makeSherdSuite(suite.modLoc("unknown_cat"), getSherdItems(RCCommonRegistry.UNKNOWN_CAT_POTTERY_SHERD),
                 suite.modLoc("unknown_cat_pattern"));
+        suite.makeSherdSuite(suite.modLoc("human"), getSherdItems(RCCommonRegistry.HUMAN_POTTERY_SHERD),
+                suite.modLoc("human_pattern"));
     }
 
     private <E> List<E> getSherdItems(E item) {
