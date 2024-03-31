@@ -25,7 +25,7 @@ public class RCCommonRegistry {
             new DevilsFortuneItem(ToolMaterials.STONE, 3, -2.3f,
                     new FabricItemSettings().maxCount(1).maxDamage(128).fireproof()));
     public static final Item FRAGMEN_POLEARM = registerItem("fragmen_polearm",
-            new FragmenPolearmItem(ToolMaterials.IRON, 2, -1.0f,
+            new FragmenPolearmItem(ToolMaterials.IRON, 2, -2.6f,
                     new FabricItemSettings().maxCount(1).maxDamage(600).fireproof()));
     public static final Item BROKEN_POLEARM = registerItem("broken_polearm",
             new Item(new FabricItemSettings().fireproof()));

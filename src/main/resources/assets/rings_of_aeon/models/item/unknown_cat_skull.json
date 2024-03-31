@@ -3,7 +3,7 @@
 	"texture_size": [32, 32],
 	"textures": {
 		"0": "rings_of_aeon:block/unknown_cat_skull",
-		"particle": "minecraft:block/bone_block"
+		"particle": "minecraft:block/soul_sand"
 	},
 	"elements": [
 		{
