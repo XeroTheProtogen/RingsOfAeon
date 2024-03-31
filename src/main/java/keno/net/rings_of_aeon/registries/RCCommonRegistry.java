@@ -50,7 +50,7 @@ public class RCCommonRegistry {
             new WallBlock(RELIQUIA_DEFAULT));
     public static final Block CLOUD_OWL_STATUE = registerBlock("cloud_owl_statue",
             new CloudOwlStatueBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).dynamicBounds()
-                    .burnable().dropsLike(Blocks.OAK_PLANKS).nonOpaque()));
+                    .burnable().nonOpaque()));
     public static final Block UNKNOWN_CAT_SKULL = registerBlock("unknown_cat_skull",
             new UnknownCatSkullBlock(FabricBlockSettings.copyOf(Blocks.STONE).dynamicBounds()
                     .nonOpaque().sounds(BlockSoundGroup.BONE).requiresTool()));
