@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "rings_of_aeon:blood_temple_entrance",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 564604120,
+    "spacing": 20,
+    "separation": 6,
+    "type": "minecraft:random_spread"
+  }
+}

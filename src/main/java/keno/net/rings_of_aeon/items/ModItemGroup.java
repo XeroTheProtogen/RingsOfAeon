@@ -20,7 +20,7 @@ public class ModItemGroup {
                         entries.add(RCCommonRegistry.RELIQUIA_PILLAR);
                         entries.add(RCCommonRegistry.BLOOD_RUSH);
                         entries.add(RCCommonRegistry.DEVIL_FORTUNE);
-                        entries.add(RCCommonRegistry.RELIQUIA_BRICK);
+                        entries.add(RCCommonRegistry.RELIQUIA_BRICKS);
                         entries.add(RCCommonRegistry.RELIQUIA_STAIR);
                         entries.add(RCCommonRegistry.RELIQUIA_WALL);
                         entries.add(RCCommonRegistry.RELIQUIA_SLAB);
@@ -31,6 +31,7 @@ public class ModItemGroup {
                         entries.add(RCCommonRegistry.HUMAN_POTTERY_SHERD);
                         entries.add(RCCommonRegistry.CLOUD_OWL_STATUE);
                         entries.add(RCCommonRegistry.UNKNOWN_CAT_SKULL);
+                        entries.add(RCCommonRegistry.TABLET_OF_WEALTH);
                     })).build());
 
     public static final RegistryKey<ItemGroup> RUIN_CALL_KEY = getItemGroupKey(RUINOUS_CALL);

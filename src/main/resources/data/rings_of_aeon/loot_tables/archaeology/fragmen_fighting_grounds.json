@@ -6,6 +6,18 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "minecraft:iron_nugget"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_nugget"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "rings_of_aeon:broken_polearm"
+        },
+        {
+          "type": "minecraft:item",
           "name": "rings_of_aeon:fragmen_sherd"
         },
         {
@@ -14,23 +26,19 @@
         },
         {
           "type": "minecraft:item",
-          "name": "rings_of_aeon:broken_polearm"
+          "name": "minecraft:shield"
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:charcoal"
+          "name": "minecraft:leather"
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:flint"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:emerald"
+          "name": "minecraft:diamond"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "rings_of_aeon:archaeology/fragmen_ruins"
+  "random_sequence": "rings_of_aeon:archaeology/fragmen_fighting_grounds"
 }

@@ -17,12 +17,12 @@ public class ModBlockTagGen extends FabricTagProvider.BlockTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(RCCommonRegistry.RELIQUIA_PILLAR)
-                .add(RCCommonRegistry.RELIQUIA_BRICK)
+                .add(RCCommonRegistry.RELIQUIA_BRICKS)
                 .add(RCCommonRegistry.RELIQUIA_STAIR)
                 .add(RCCommonRegistry.RELIQUIA_SLAB)
                 .add(RCCommonRegistry.RELIQUIA_WALL)
                 .add(RCCommonRegistry.UNKNOWN_CAT_SKULL);
         getOrCreateTagBuilder(BlockTags.STONE_BRICKS)
-                .add(RCCommonRegistry.RELIQUIA_BRICK);
+                .add(RCCommonRegistry.RELIQUIA_BRICKS);
     }
 }

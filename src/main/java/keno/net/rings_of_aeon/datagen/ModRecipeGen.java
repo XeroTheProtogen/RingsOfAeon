@@ -20,7 +20,7 @@ public class ModRecipeGen extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter exporter) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, RCCommonRegistry.RELIQUIA_BRICK, 1)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, RCCommonRegistry.RELIQUIA_BRICKS, 4)
                 .pattern("AAA")
                 .pattern("ABC")
                 .pattern("CCC")
@@ -30,7 +30,7 @@ public class ModRecipeGen extends FabricRecipeProvider {
                 .criterion(hasItem(Items.SAND), conditionsFromItem(Items.SAND))
                 .criterion(hasItem(Items.FLINT), conditionsFromItem(Items.FLINT))
                 .criterion(hasItem(Items.GRAVEL), conditionsFromItem(Items.GRAVEL))
-                .offerTo(exporter, new Identifier(getRecipeName(RCCommonRegistry.RELIQUIA_BRICK)));
+                .offerTo(exporter, new Identifier(getRecipeName(RCCommonRegistry.RELIQUIA_BRICKS)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, RCCommonRegistry.FRAGMEN_POLEARM, 1)
                 .pattern("X")
@@ -42,10 +42,20 @@ public class ModRecipeGen extends FabricRecipeProvider {
                 .criterion(hasItem(RCCommonRegistry.BROKEN_POLEARM), conditionsFromItem(RCCommonRegistry.BROKEN_POLEARM))
                 .offerTo(exporter, new Identifier(getRecipeName(RCCommonRegistry.FRAGMEN_POLEARM)));
 
-        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, RCCommonRegistry.RELIQUIA_SLAB, RCCommonRegistry.RELIQUIA_BRICK);
-        offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, RCCommonRegistry.RELIQUIA_WALL, RCCommonRegistry.RELIQUIA_BRICK);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, RCCommonRegistry.DEVIL_FORTUNE, 1)
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("ABA")
+                .input('A', Items.GLASS_BOTTLE)
+                .input('B', RCCommonRegistry.TABLET_OF_WEALTH)
+                .input('C', Items.REDSTONE)
+                .criterion(hasItem(RCCommonRegistry.TABLET_OF_WEALTH), conditionsFromItem(RCCommonRegistry.TABLET_OF_WEALTH))
+                .offerTo(exporter, new Identifier(getRecipeName(RCCommonRegistry.DEVIL_FORTUNE)));
+
+        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, RCCommonRegistry.RELIQUIA_SLAB, RCCommonRegistry.RELIQUIA_BRICKS);
+        offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, RCCommonRegistry.RELIQUIA_WALL, RCCommonRegistry.RELIQUIA_BRICKS);
         offerBasicRecipe(exporter, RecipeCategory.MISC, Items.BONE_MEAL, RCCommonRegistry.UNKNOWN_CAT_SKULL, 12);
-        offerStairRecipe(RCCommonRegistry.RELIQUIA_STAIR, RCCommonRegistry.RELIQUIA_BRICK);
+        offerStairRecipe(RCCommonRegistry.RELIQUIA_STAIR, RCCommonRegistry.RELIQUIA_BRICKS);
     }
 
     private void offerStairRecipe(@NotNull ItemConvertible output, @NotNull ItemConvertible input) {

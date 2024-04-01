@@ -7,9 +7,8 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
 
-import java.util.List;
-
 public class RCDataGenerator implements DataGeneratorEntrypoint {
+    //TODO figure out what in god's name is causing SherdDatagenSuite to act weird
     private final FabricSherdDatagenSuite suite = new FabricSherdDatagenSuite(RuinousCall.MODID);
 
     @Override
@@ -26,18 +25,10 @@ public class RCDataGenerator implements DataGeneratorEntrypoint {
 
     private void registerSherds() {
         //Register Sherd Data here
-        suite.makeSherdSuite(suite.modLoc("fragmen"), getSherdItems(RCCommonRegistry.FRAGMEN_POTTERY_SHERD),
-                suite.modLoc("fragmen_pottery_pattern"));
-        suite.makeSherdSuite(suite.modLoc("cloud_owl"), getSherdItems(RCCommonRegistry.CLOUD_OWL_POTTERY_SHERD),
-                suite.modLoc("cloud_owl_pottery_pattern"));
-        suite.makeSherdSuite(suite.modLoc("unknown_cat"), getSherdItems(RCCommonRegistry.UNKNOWN_CAT_POTTERY_SHERD),
-                suite.modLoc("unknown_cat_pattern"));
-        suite.makeSherdSuite(suite.modLoc("human"), getSherdItems(RCCommonRegistry.HUMAN_POTTERY_SHERD),
-                suite.modLoc("human_pattern"));
-    }
-
-    private <E> List<E> getSherdItems(E item) {
-        return List.of(item);
+        suite.makeSherdSuite("fragmen", RCCommonRegistry.FRAGMEN_POTTERY_SHERD, "fragmen_pottery_pattern");
+        suite.makeSherdSuite("cloud_owl", RCCommonRegistry.CLOUD_OWL_POTTERY_SHERD,"cloud_owl_pottery_pattern");
+        suite.makeSherdSuite("unknown_cat", RCCommonRegistry.UNKNOWN_CAT_POTTERY_SHERD,"unknown_cat_pattern");
+        suite.makeSherdSuite("human", RCCommonRegistry.HUMAN_POTTERY_SHERD, "human_pattern");
     }
 
     @Override

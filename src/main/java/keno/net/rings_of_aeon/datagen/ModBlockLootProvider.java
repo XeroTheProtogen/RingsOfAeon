@@ -11,7 +11,7 @@ public class ModBlockLootProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        addDrop(RCCommonRegistry.RELIQUIA_BRICK);
+        addDrop(RCCommonRegistry.RELIQUIA_BRICKS);
         addDrop(RCCommonRegistry.RELIQUIA_PILLAR);
         addDrop(RCCommonRegistry.RELIQUIA_SLAB);
         addDrop(RCCommonRegistry.RELIQUIA_WALL);

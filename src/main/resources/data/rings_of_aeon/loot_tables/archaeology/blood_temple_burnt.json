@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:archaeology",
+  "pools":[
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:redstone"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:charcoal"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:coal_block"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "rings_of_aeon:reliquia_brick"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "rings_of_aeon:fragmen_sherd"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "rings_of_aeon:unknown_cat_sherd"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "rings_of_aeon:archaeology/blood_temple_burnt"
+}

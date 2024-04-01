@@ -1,0 +1,24 @@
+{
+  "name": "rings_of_aeon:blood_temple/centre_pool",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 2,
+      "element": {
+        "location": "rings_of_aeon:temple_centre_pristine",
+        "processors": "rings_of_aeon:blood_temple_center_pristine_archaeology",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "rings_of_aeon:temple_centre_burnt",
+        "processors": "rings_of_aeon:blood_temple_center_burnt_archaeology",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

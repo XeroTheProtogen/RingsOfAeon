@@ -1,0 +1,15 @@
+{
+  "name": "rings_of_aeon:fragmen_fighting_grounds/start_pool",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "rings_of_aeon:fragmen_fighting_grounds",
+        "processors": "rings_of_aeon:fragmen_fighting_grounds_archaeology",
+        "projection": "terrain_matching",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

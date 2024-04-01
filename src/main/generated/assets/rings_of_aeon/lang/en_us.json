@@ -1,6 +1,6 @@
 {
   "block.rings_of_aeon.cloud_owl_statue": "Cloud Owl Statue",
-  "block.rings_of_aeon.reliquia_brick": "Reliquia Brick",
+  "block.rings_of_aeon.reliquia_brick": "Reliquia Bricks",
   "block.rings_of_aeon.reliquia_pillar": "Reliquia Pillar",
   "block.rings_of_aeon.reliquia_slab": "Reliquia Slab",
   "block.rings_of_aeon.reliquia_stair": "Reliquia Stairs",
@@ -11,9 +11,10 @@
   "item.rings_of_aeon.broken_polearm": "Broken Polearm",
   "item.rings_of_aeon.cloud_owl_sherd": "Cloud Owl Pottery Sherd",
   "item.rings_of_aeon.devil_fortune": "Devil's Fortune",
-  "item.rings_of_aeon.fragmen_polearm": "Fragmen Spear",
+  "item.rings_of_aeon.fragmen_polearm": "Fragmen Polearm",
   "item.rings_of_aeon.fragmen_sherd": "Fragmen Pottery Sherd",
   "item.rings_of_aeon.human_sherd": "Human Pottery Sherd",
+  "item.rings_of_aeon.tablet_of_wealth": "Tablet of Wealth",
   "item.rings_of_aeon.unknown_cat_sherd": "Unknown Cat Pottery Sherd",
   "itemgroup.ruinous_call": "Ruinous Call"
 }

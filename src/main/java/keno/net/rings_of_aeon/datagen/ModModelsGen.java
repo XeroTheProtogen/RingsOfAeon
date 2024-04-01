@@ -16,7 +16,7 @@ public class ModModelsGen extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        BlockStateModelGenerator.BlockTexturePool reliquiaBrickTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(RCCommonRegistry.RELIQUIA_BRICK);
+        BlockStateModelGenerator.BlockTexturePool reliquiaBrickTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(RCCommonRegistry.RELIQUIA_BRICKS);
         blockStateModelGenerator.registerAxisRotated(RCCommonRegistry.RELIQUIA_PILLAR, new Identifier(RuinousCall.MODID, "block/reliquia_pillar"));
         reliquiaBrickTexturePool.stairs(RCCommonRegistry.RELIQUIA_STAIR);
         reliquiaBrickTexturePool.slab(RCCommonRegistry.RELIQUIA_SLAB);
@@ -30,5 +30,6 @@ public class ModModelsGen extends FabricModelProvider {
         itemModelGenerator.register(RCCommonRegistry.UNKNOWN_CAT_POTTERY_SHERD, Models.GENERATED);
         itemModelGenerator.register(RCCommonRegistry.HUMAN_POTTERY_SHERD, Models.GENERATED);
         itemModelGenerator.register(RCCommonRegistry.BROKEN_POLEARM, Models.GENERATED);
+        itemModelGenerator.register(RCCommonRegistry.TABLET_OF_WEALTH, Models.GENERATED);
     }
 }

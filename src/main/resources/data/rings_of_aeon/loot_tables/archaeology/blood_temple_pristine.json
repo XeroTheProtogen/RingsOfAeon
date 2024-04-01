@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:archaeology",
+  "pools":[
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:redstone"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cherry_sapling"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "rings_of_aeon:tablet_of_wealth"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "rings_of_aeon:reliquia_brick"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "rings_of_aeon:fragmen_sherd"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "rings_of_aeon:unknown_cat_sherd"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "rings_of_aeon:archaeology/blood_temple_pristine"
+}

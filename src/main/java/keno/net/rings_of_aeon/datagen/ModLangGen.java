@@ -25,16 +25,17 @@ public class ModLangGen extends FabricLanguageProvider {
     private void generateItemLang(TranslationBuilder builder) {
         builder.add(RCCommonRegistry.DEVIL_FORTUNE, "Devil's Fortune");
         builder.add(RCCommonRegistry.BLOOD_RUSH, "Blood Rush");
-        builder.add(RCCommonRegistry.FRAGMEN_POLEARM, "Fragmen Spear");
+        builder.add(RCCommonRegistry.FRAGMEN_POLEARM, "Fragmen Polearm");
         builder.add(RCCommonRegistry.CLOUD_OWL_POTTERY_SHERD, "Cloud Owl Pottery Sherd");
         builder.add(RCCommonRegistry.FRAGMEN_POTTERY_SHERD, "Fragmen Pottery Sherd");
         builder.add(RCCommonRegistry.UNKNOWN_CAT_POTTERY_SHERD, "Unknown Cat Pottery Sherd");
         builder.add(RCCommonRegistry.HUMAN_POTTERY_SHERD, "Human Pottery Sherd");
         builder.add(RCCommonRegistry.BROKEN_POLEARM, "Broken Polearm");
+        builder.add(RCCommonRegistry.TABLET_OF_WEALTH, "Tablet of Wealth");
     }
 
     private void generateBlockLang(TranslationBuilder builder) {
-        builder.add(RCCommonRegistry.RELIQUIA_BRICK, "Reliquia Brick");
+        builder.add(RCCommonRegistry.RELIQUIA_BRICKS, "Reliquia Bricks");
         builder.add(RCCommonRegistry.RELIQUIA_SLAB, "Reliquia Slab");
         builder.add(RCCommonRegistry.RELIQUIA_WALL, "Reliquia Wall");
         builder.add(RCCommonRegistry.RELIQUIA_STAIR, "Reliquia Stairs");

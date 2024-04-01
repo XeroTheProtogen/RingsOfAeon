@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "rings_of_aeon:fragmen_fighting_grounds",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 9471069631,
+    "spacing": 20,
+    "separation": 10,
+    "type": "minecraft:random_spread"
+  }
+}

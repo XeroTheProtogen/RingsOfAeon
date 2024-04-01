@@ -17,7 +17,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 
 public class RCCommonRegistry {
-    //Items
+    // Items
+    // Weapons
     public static final Item BLOOD_RUSH = registerItem("blood_rush",
             new BloodRushItem(ToolMaterials.IRON, 4, -2.4f,
                     new FabricItemSettings().maxCount(1).maxDamage(255).fireproof()));
@@ -27,8 +28,10 @@ public class RCCommonRegistry {
     public static final Item FRAGMEN_POLEARM = registerItem("fragmen_polearm",
             new FragmenPolearmItem(ToolMaterials.IRON, 2, -2.6f,
                     new FabricItemSettings().maxCount(1).maxDamage(600).fireproof()));
+    // Materials
     public static final Item BROKEN_POLEARM = registerItem("broken_polearm",
             new Item(new FabricItemSettings().fireproof()));
+    public static final Item TABLET_OF_WEALTH = registerBasicItem("tablet_of_wealth");
     
     //Sherds
     public static final Item FRAGMEN_POTTERY_SHERD = registerBasicItem("fragmen_sherd");
@@ -40,10 +43,10 @@ public class RCCommonRegistry {
     static final FabricBlockSettings RELIQUIA_DEFAULT = FabricBlockSettings.copyOf(Blocks.BRICKS).sounds(BlockSoundGroup.DEEPSLATE_BRICKS).mapColor(MapColor.TERRACOTTA_RED).requiresTool();
     public static final Block RELIQUIA_PILLAR = registerBlock("reliquia_pillar",
             new PillarBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_PILLAR).sounds(BlockSoundGroup.DEEPSLATE_BRICKS)));
-    public static final Block RELIQUIA_BRICK = registerBlock("reliquia_brick",
+    public static final Block RELIQUIA_BRICKS = registerBlock("reliquia_brick",
             new Block(RELIQUIA_DEFAULT));
     public static final Block RELIQUIA_STAIR = registerBlock("reliquia_stair",
-            new StairsBlock(RCCommonRegistry.RELIQUIA_BRICK.getDefaultState(), RELIQUIA_DEFAULT));
+            new StairsBlock(RCCommonRegistry.RELIQUIA_BRICKS.getDefaultState(), RELIQUIA_DEFAULT));
     public static final Block RELIQUIA_SLAB = registerBlock("reliquia_slab",
             new SlabBlock(RELIQUIA_DEFAULT));
     public static final Block RELIQUIA_WALL = registerBlock("reliquia_wall",
