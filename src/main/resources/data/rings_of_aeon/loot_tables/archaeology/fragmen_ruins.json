@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:archaeology",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "rings_of_aeon:fragmen_sherd"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "rings_of_aeon:human_sherd"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:charcoal"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:flint"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "rings_of_aeon:reliquia_brick_item"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "rings_of_aeon:archaeology/fragmen_ruins"
+}
