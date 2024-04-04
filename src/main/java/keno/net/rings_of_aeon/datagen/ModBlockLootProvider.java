@@ -15,7 +15,7 @@ public class ModBlockLootProvider extends FabricBlockLootTableProvider {
         addDrop(RCCommonRegistry.RELIQUIA_PILLAR);
         addDrop(RCCommonRegistry.RELIQUIA_SLAB);
         addDrop(RCCommonRegistry.RELIQUIA_WALL);
-        addDrop(RCCommonRegistry.RELIQUIA_STAIR);
+        addDrop(RCCommonRegistry.RELIQUIA_STAIRS);
         addDrop(RCCommonRegistry.CLOUD_OWL_STATUE);
         addDrop(RCCommonRegistry.UNKNOWN_CAT_SKULL);
     }

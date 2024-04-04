@@ -7,7 +7,6 @@ import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
-import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
@@ -20,6 +19,7 @@ public class ModRecipeGen extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter exporter) {
+        //If a recipe shouldn't be used as a template, use a custom recipe builder
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, RCCommonRegistry.RELIQUIA_BRICKS, 4)
                 .pattern("AAA")
                 .pattern("ABC")
@@ -52,15 +52,28 @@ public class ModRecipeGen extends FabricRecipeProvider {
                 .criterion(hasItem(RCCommonRegistry.TABLET_OF_WEALTH), conditionsFromItem(RCCommonRegistry.TABLET_OF_WEALTH))
                 .offerTo(exporter, new Identifier(getRecipeName(RCCommonRegistry.DEVIL_FORTUNE)));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, RCCommonRegistry.RELIQUIA_PILLAR, 2)
+                .pattern("#")
+                .pattern("#")
+                .input('#', RCCommonRegistry.RELIQUIA_BRICKS)
+                .criterion(hasItem(RCCommonRegistry.RELIQUIA_BRICKS), conditionsFromItem(RCCommonRegistry.RELIQUIA_BRICKS))
+                .offerTo(exporter, new Identifier(getRecipeName(RCCommonRegistry.RELIQUIA_PILLAR)));
+
+        //Blocks which have cookie-cutter recipes will either use fabric's offer methods or custom offer methods
         offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, RCCommonRegistry.RELIQUIA_SLAB, RCCommonRegistry.RELIQUIA_BRICKS);
         offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, RCCommonRegistry.RELIQUIA_WALL, RCCommonRegistry.RELIQUIA_BRICKS);
         offerBasicRecipe(exporter, RecipeCategory.MISC, Items.BONE_MEAL, RCCommonRegistry.UNKNOWN_CAT_SKULL, 12);
-        offerStairRecipe(RCCommonRegistry.RELIQUIA_STAIR, RCCommonRegistry.RELIQUIA_BRICKS);
+        offerStairsRecipe(exporter, RCCommonRegistry.RELIQUIA_STAIRS, RCCommonRegistry.RELIQUIA_BRICKS);
     }
 
-    private void offerStairRecipe(@NotNull ItemConvertible output, @NotNull ItemConvertible input) {
-        //Literally just a wrapper I made because the naming scheme for the stairs recipe gen annoys me
-        createStairsRecipe(output, Ingredient.ofItems(input));
+    private void offerStairsRecipe(RecipeExporter exporter,@NotNull ItemConvertible output, @NotNull ItemConvertible input) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 4)
+                .pattern("#  ")
+                .pattern("## ")
+                .pattern("###")
+                .input('#', input)
+                .criterion(hasItem(input), conditionsFromItem(input))
+                .offerTo(exporter, new Identifier(getRecipeName(RCCommonRegistry.RELIQUIA_STAIRS)));
     }
 
     private void offerBasicRecipe(RecipeExporter exporter,RecipeCategory category, @NotNull ItemConvertible output, @NotNull ItemConvertible input, int amount) {

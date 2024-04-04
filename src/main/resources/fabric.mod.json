@@ -22,6 +22,9 @@
 		],
 		"fabric-datagen": [
 			"keno.net.rings_of_aeon.RCDataGenerator"
+		],
+		"emi": [
+			"keno.net.rings_of_aeon.compat.RCEmiPlugin"
 		]
 	},
 	"mixins": [

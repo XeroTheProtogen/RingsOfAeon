@@ -8,7 +8,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
 
 public class RCDataGenerator implements DataGeneratorEntrypoint {
-    //TODO figure out what in god's name is causing SherdDatagenSuite to act weird
+    //Can't figure out what causes the error, but pressing rerun seems to make it resolve itself (-_-)
     private final FabricSherdDatagenSuite suite = new FabricSherdDatagenSuite(RuinousCall.MODID);
 
     @Override

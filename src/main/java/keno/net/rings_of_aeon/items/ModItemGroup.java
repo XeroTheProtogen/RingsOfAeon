@@ -21,7 +21,7 @@ public class ModItemGroup {
                         entries.add(RCCommonRegistry.BLOOD_RUSH);
                         entries.add(RCCommonRegistry.DEVIL_FORTUNE);
                         entries.add(RCCommonRegistry.RELIQUIA_BRICKS);
-                        entries.add(RCCommonRegistry.RELIQUIA_STAIR);
+                        entries.add(RCCommonRegistry.RELIQUIA_STAIRS);
                         entries.add(RCCommonRegistry.RELIQUIA_WALL);
                         entries.add(RCCommonRegistry.RELIQUIA_SLAB);
                         entries.add(RCCommonRegistry.FRAGMEN_POLEARM);

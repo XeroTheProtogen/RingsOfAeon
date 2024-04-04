@@ -18,7 +18,7 @@ public class ModBlockTagGen extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(RCCommonRegistry.RELIQUIA_PILLAR)
                 .add(RCCommonRegistry.RELIQUIA_BRICKS)
-                .add(RCCommonRegistry.RELIQUIA_STAIR)
+                .add(RCCommonRegistry.RELIQUIA_STAIRS)
                 .add(RCCommonRegistry.RELIQUIA_SLAB)
                 .add(RCCommonRegistry.RELIQUIA_WALL)
                 .add(RCCommonRegistry.UNKNOWN_CAT_SKULL);

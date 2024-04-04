@@ -45,7 +45,7 @@ public class RCCommonRegistry {
             new PillarBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_PILLAR).sounds(BlockSoundGroup.DEEPSLATE_BRICKS)));
     public static final Block RELIQUIA_BRICKS = registerBlock("reliquia_brick",
             new Block(RELIQUIA_DEFAULT));
-    public static final Block RELIQUIA_STAIR = registerBlock("reliquia_stair",
+    public static final Block RELIQUIA_STAIRS = registerBlock("reliquia_stair",
             new StairsBlock(RCCommonRegistry.RELIQUIA_BRICKS.getDefaultState(), RELIQUIA_DEFAULT));
     public static final Block RELIQUIA_SLAB = registerBlock("reliquia_slab",
             new SlabBlock(RELIQUIA_DEFAULT));

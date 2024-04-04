@@ -18,7 +18,7 @@ public class ModModelsGen extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         BlockStateModelGenerator.BlockTexturePool reliquiaBrickTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(RCCommonRegistry.RELIQUIA_BRICKS);
         blockStateModelGenerator.registerAxisRotated(RCCommonRegistry.RELIQUIA_PILLAR, new Identifier(RuinousCall.MODID, "block/reliquia_pillar"));
-        reliquiaBrickTexturePool.stairs(RCCommonRegistry.RELIQUIA_STAIR);
+        reliquiaBrickTexturePool.stairs(RCCommonRegistry.RELIQUIA_STAIRS);
         reliquiaBrickTexturePool.slab(RCCommonRegistry.RELIQUIA_SLAB);
         reliquiaBrickTexturePool.wall(RCCommonRegistry.RELIQUIA_WALL);
     }
