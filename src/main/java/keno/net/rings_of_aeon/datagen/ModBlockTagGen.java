@@ -24,5 +24,7 @@ public class ModBlockTagGen extends FabricTagProvider.BlockTagProvider {
                 .add(RCCommonRegistry.UNKNOWN_CAT_SKULL);
         getOrCreateTagBuilder(BlockTags.STONE_BRICKS)
                 .add(RCCommonRegistry.RELIQUIA_BRICKS);
+        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+                .add(RCCommonRegistry.ARCHIVIST_TABLE);
     }
 }

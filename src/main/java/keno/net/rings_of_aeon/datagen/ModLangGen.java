@@ -34,6 +34,7 @@ public class ModLangGen extends FabricLanguageProvider {
         builder.add(RCCommonRegistry.HUMAN_POTTERY_SHERD, "Human Pottery Sherd");
         builder.add(RCCommonRegistry.BROKEN_POLEARM, "Broken Polearm");
         builder.add(RCCommonRegistry.TABLET_OF_WEALTH, "Tablet of Wealth");
+        builder.add(RCCommonRegistry.TATTERED_PAPER, "Tattered Paper");
     }
 
     private void generateBlockLang(TranslationBuilder builder) {
@@ -44,6 +45,7 @@ public class ModLangGen extends FabricLanguageProvider {
         builder.add(RCCommonRegistry.RELIQUIA_PILLAR, "Reliquia Pillar");
         builder.add(RCCommonRegistry.CLOUD_OWL_STATUE, "Cloud Owl Statue");
         builder.add(RCCommonRegistry.UNKNOWN_CAT_SKULL, "Unknown Cat Skull");
+        builder.add(RCCommonRegistry.ARCHIVIST_TABLE, "Archivist Table");
     }
 
     private void generateEMIInfoLang(TranslationBuilder builder) {

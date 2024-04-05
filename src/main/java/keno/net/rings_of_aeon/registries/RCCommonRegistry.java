@@ -32,6 +32,7 @@ public class RCCommonRegistry {
     public static final Item BROKEN_POLEARM = registerItem("broken_polearm",
             new Item(new FabricItemSettings().fireproof()));
     public static final Item TABLET_OF_WEALTH = registerBasicItem("tablet_of_wealth");
+    public static final Item TATTERED_PAPER = registerBasicItem("tattered_paper");
     
     //Sherds
     public static final Item FRAGMEN_POTTERY_SHERD = registerBasicItem("fragmen_sherd");
@@ -51,6 +52,8 @@ public class RCCommonRegistry {
             new SlabBlock(RELIQUIA_DEFAULT));
     public static final Block RELIQUIA_WALL = registerBlock("reliquia_wall",
             new WallBlock(RELIQUIA_DEFAULT));
+    public static final Block ARCHIVIST_TABLE = registerBlock("archivist_table",
+            new Block(FabricBlockSettings.copyOf(Blocks.BOOKSHELF).requiresTool()));
     public static final Block CLOUD_OWL_STATUE = registerBlock("cloud_owl_statue",
             new CloudOwlStatueBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).dynamicBounds()
                     .burnable().nonOpaque()));

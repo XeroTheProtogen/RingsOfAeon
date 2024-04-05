@@ -5,10 +5,13 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.tag.ItemTags;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
 
@@ -64,9 +67,34 @@ public class ModRecipeGen extends FabricRecipeProvider {
         offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, RCCommonRegistry.RELIQUIA_WALL, RCCommonRegistry.RELIQUIA_BRICKS);
         offerBasicRecipe(exporter, RecipeCategory.MISC, Items.BONE_MEAL, RCCommonRegistry.UNKNOWN_CAT_SKULL, 12);
         offerStairsRecipe(exporter, RCCommonRegistry.RELIQUIA_STAIRS, RCCommonRegistry.RELIQUIA_BRICKS);
+        offerTableRecipe(exporter, RCCommonRegistry.ARCHIVIST_TABLE, ItemTags.PLANKS, RCCommonRegistry.TATTERED_PAPER);
     }
 
-    private void offerStairsRecipe(RecipeExporter exporter,@NotNull ItemConvertible output, @NotNull ItemConvertible input) {
+    private void offerTableRecipe(RecipeExporter exporter, @NotNull ItemConvertible output,
+                                  @NotNull ItemConvertible base, @NotNull ItemConvertible material) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, output)
+                .pattern("AA")
+                .pattern("BB")
+                .pattern("BB")
+                .input('A', material)
+                .input('B', base)
+                .criterion(hasItem(material), conditionsFromItem(material))
+                .offerTo(exporter, new Identifier(getRecipeName(output)));
+    }
+
+    private void offerTableRecipe(RecipeExporter exporter, @NotNull ItemConvertible output,
+                                  @NotNull TagKey<Item> base, @NotNull ItemConvertible material) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, output)
+                .pattern("AA")
+                .pattern("BB")
+                .pattern("BB")
+                .input('A', material)
+                .input('B', Ingredient.fromTag(base))
+                .criterion(hasItem(material), conditionsFromItem(material))
+                .offerTo(exporter, new Identifier(getRecipeName(output)));
+    }
+
+    private void offerStairsRecipe(RecipeExporter exporter, @NotNull ItemConvertible output, @NotNull ItemConvertible input) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 4)
                 .pattern("#  ")
                 .pattern("## ")

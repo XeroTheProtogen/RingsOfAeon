@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "rings_of_aeon:tattered_paper"
+    },
+    "B": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    "AA",
+    "BB",
+    "BB"
+  ],
+  "result": {
+    "item": "rings_of_aeon:archivist_table"
+  }
+}

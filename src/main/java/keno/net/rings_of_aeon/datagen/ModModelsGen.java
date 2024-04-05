@@ -31,5 +31,6 @@ public class ModModelsGen extends FabricModelProvider {
         itemModelGenerator.register(RCCommonRegistry.HUMAN_POTTERY_SHERD, Models.GENERATED);
         itemModelGenerator.register(RCCommonRegistry.BROKEN_POLEARM, Models.GENERATED);
         itemModelGenerator.register(RCCommonRegistry.TABLET_OF_WEALTH, Models.GENERATED);
+        itemModelGenerator.register(RCCommonRegistry.TATTERED_PAPER, Models.GENERATED);
     }
 }
