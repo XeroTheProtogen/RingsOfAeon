@@ -19,6 +19,7 @@ public class RCDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ModModelsGen::new);
         pack.addProvider(ModRecipeGen::new);
         pack.addProvider(ModBlockLootProvider::new);
+        pack.addProvider(ModPOITagGen::new);
         registerSherds();
         suite.build(pack);
     }

@@ -2,6 +2,8 @@ package keno.net.rings_of_aeon;
 
 import keno.net.rings_of_aeon.items.ModItemGroup;
 import keno.net.rings_of_aeon.registries.RCCommonRegistry;
+import keno.net.rings_of_aeon.registries.RCVillagerTypes;
+import keno.net.rings_of_aeon.registries.RCVillagerTrades;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
@@ -17,6 +19,8 @@ public class RuinousCall implements ModInitializer {
     @Override
     public void onInitialize() {
         RCCommonRegistry.registerCommonSide();
+        RCVillagerTypes.register();
+        RCVillagerTrades.registerTrades();
         ModItemGroup.registerItemGroups();
     }
 

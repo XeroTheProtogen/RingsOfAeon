@@ -1,5 +1,6 @@
-package keno.net.rings_of_aeon.items;
+package keno.net.rings_of_aeon.items.weapon;
 
+import keno.net.rings_of_aeon.RuinousCall;
 import keno.net.rings_of_aeon.registries.RCCommonRegistry;
 import keno.net.rings_of_aeon.util.ItemUtils;
 import keno.net.rings_of_aeon.util.MathUtils;
@@ -22,7 +23,7 @@ import net.minecraft.world.World;
 
 public class BloodRushItem extends SwordItem {
     // NBT Key for health storage
-    private final String LIFE_ESSENCE = "nbt.rings_of_aeon.life_essence";
+    private final String LIFE_ESSENCE = "nbt." + RuinousCall.MODID + ".life_essence";
 
     public BloodRushItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
         super(toolMaterial, attackDamage, attackSpeed, settings);

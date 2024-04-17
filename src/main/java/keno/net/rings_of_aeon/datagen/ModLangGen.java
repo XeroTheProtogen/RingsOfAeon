@@ -16,8 +16,8 @@ public class ModLangGen extends FabricLanguageProvider {
         generateItemLang(translationBuilder);
         generateBlockLang(translationBuilder);
         generateGroupLang(translationBuilder);
+        generateMiscLang(translationBuilder);
         generateEMIInfoLang(translationBuilder);
-        translationBuilder.add("death.attack.tooFast", "%1$s Went Too Fast To Handle");
     }
 
     private void generateGroupLang(TranslationBuilder builder) {
@@ -35,6 +35,7 @@ public class ModLangGen extends FabricLanguageProvider {
         builder.add(RCCommonRegistry.BROKEN_POLEARM, "Broken Polearm");
         builder.add(RCCommonRegistry.TABLET_OF_WEALTH, "Tablet of Wealth");
         builder.add(RCCommonRegistry.TATTERED_PAPER, "Tattered Paper");
+        builder.add(RCCommonRegistry.FRAGMEN_ARCHIVE_VOL_ONE, "The Fragmen Archives: Vol 1");
     }
 
     private void generateBlockLang(TranslationBuilder builder) {
@@ -46,6 +47,10 @@ public class ModLangGen extends FabricLanguageProvider {
         builder.add(RCCommonRegistry.CLOUD_OWL_STATUE, "Cloud Owl Statue");
         builder.add(RCCommonRegistry.UNKNOWN_CAT_SKULL, "Unknown Cat Skull");
         builder.add(RCCommonRegistry.ARCHIVIST_TABLE, "Archivist Table");
+    }
+
+    private void generateMiscLang(TranslationBuilder builder) {
+        builder.add("entity.minecraft.villager.archivist", "Archivist");
     }
 
     private void generateEMIInfoLang(TranslationBuilder builder) {

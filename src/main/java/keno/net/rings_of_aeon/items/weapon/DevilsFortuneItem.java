@@ -1,5 +1,6 @@
-package keno.net.rings_of_aeon.items;
+package keno.net.rings_of_aeon.items.weapon;
 
+import keno.net.rings_of_aeon.RuinousCall;
 import keno.net.rings_of_aeon.registries.RCCommonRegistry;
 import keno.net.rings_of_aeon.util.ItemUtils;
 import keno.net.rings_of_aeon.util.TimeConversion;
@@ -11,7 +12,6 @@ import net.minecraft.item.Items;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.nbt.NbtElement;
-import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -24,7 +24,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Stream;
 
 public class DevilsFortuneItem extends SwordItem {
-    private final String NBT = "nbt.rings_of_aeon.drawn_fortune";
+    private final String NBT = "nbt." + RuinousCall.MODID + ".drawn_fortune";
 
     public DevilsFortuneItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
         super(toolMaterial, attackDamage, attackSpeed, settings);
@@ -75,8 +75,8 @@ public class DevilsFortuneItem extends SwordItem {
 
     private void jackpot(PlayerEntity user, ItemStack stack) {
         if (!user.getWorld().isClient()) {
-            user.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, TimeConversion.secondsToTicks(10), 2));
-            user.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, TimeConversion.secondsToTicks(40), 3));
+            user.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, TimeConversion.secondsToTicks(10), 1));
+            user.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, TimeConversion.secondsToTicks(40), 2));
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, TimeConversion.secondsToTicks(30)));
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, TimeConversion.secondsToTicks(15), 2));
             user.playSound(SoundEvents.ENTITY_PLAYER_LEVELUP, SoundCategory.NEUTRAL,0.8f, 1f);
@@ -87,7 +87,7 @@ public class DevilsFortuneItem extends SwordItem {
 
     private void foolsJackpot(PlayerEntity user, ItemStack stack) {
         if (!user.getWorld().isClient()) {
-            user.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, TimeConversion.secondsToTicks(20), 2));
+            user.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, TimeConversion.secondsToTicks(20), 1));
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, TimeConversion.secondsToTicks(10)));
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, TimeConversion.secondsToTicks(5), 2));
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, TimeConversion.secondsToTicks(3)));

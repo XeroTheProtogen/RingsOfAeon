@@ -1,7 +1,7 @@
-// 1.20.4	2024-04-05T23:56:38.4178511	Rings of Aeon/Block Loot Tables
+// 1.20.4	2024-04-15T22:45:45.170193	RoA Part 1: Ruinous Call/Block Loot Tables
 ff32558be786d07c0013dfdd4e2703264c52ed8c data\rings_of_aeon\loot_tables\blocks\cloud_owl_statue.json
-242c2cb53d7aca6e07d6e19460f497202f690c43 data\rings_of_aeon\loot_tables\blocks\archivist_table.json
 7e9eb7e5018f4af27a4e60e470b682933c4b966c data\rings_of_aeon\loot_tables\blocks\reliquia_pillar.json
+242c2cb53d7aca6e07d6e19460f497202f690c43 data\rings_of_aeon\loot_tables\blocks\archivist_table.json
 15a0fd97059512a1bac4d64672ed253cd4a71f66 data\rings_of_aeon\loot_tables\blocks\reliquia_slab.json
 552c64549f0558a30a2090e94f13b2d4325cc16f data\rings_of_aeon\loot_tables\blocks\reliquia_brick.json
 5c7f4b2c405a85469899e4a85bc0bc08787b00e3 data\rings_of_aeon\loot_tables\blocks\reliquia_stair.json

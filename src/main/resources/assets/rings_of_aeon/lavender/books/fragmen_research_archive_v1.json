@@ -1,0 +1,5 @@
+{
+  "texture": "lavender:textures/gui/brown_book.png",
+  "display_completion": true,
+  "dynamic_book_model": "rings_of_aeon:fragmen_research_archive_v1"
+}

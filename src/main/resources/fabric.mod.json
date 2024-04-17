@@ -2,10 +2,11 @@
 	"schemaVersion": 1,
 	"id": "rings_of_aeon",
 	"version": "${version}",
-	"name": "Rings of Aeon",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "RoA Part 1: Ruinous Call",
+	"description": "The first mod in the Rings of Aeon Project",
+	"icon": "logo.png",
 	"authors": [
-		"Me!"
+		"Keno"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",

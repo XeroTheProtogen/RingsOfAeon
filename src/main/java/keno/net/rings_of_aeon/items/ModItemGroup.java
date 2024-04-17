@@ -32,6 +32,8 @@ public class ModItemGroup {
                         entries.add(RCCommonRegistry.CLOUD_OWL_STATUE);
                         entries.add(RCCommonRegistry.UNKNOWN_CAT_SKULL);
                         entries.add(RCCommonRegistry.TABLET_OF_WEALTH);
+                        entries.add(RCCommonRegistry.ARCHIVIST_TABLE);
+                        entries.add(RCCommonRegistry.FRAGMEN_ARCHIVE_VOL_ONE);
                     })).build());
 
     public static final RegistryKey<ItemGroup> RUIN_CALL_KEY = getItemGroupKey(RUINOUS_CALL);

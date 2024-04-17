@@ -1,11 +1,13 @@
 package keno.net.rings_of_aeon.registries;
 
+import io.wispforest.lavender.book.LavenderBookItem;
 import keno.net.rings_of_aeon.RuinousCall;
 import keno.net.rings_of_aeon.blocks.CloudOwlStatueBlock;
 import keno.net.rings_of_aeon.blocks.UnknownCatSkullBlock;
-import keno.net.rings_of_aeon.items.BloodRushItem;
-import keno.net.rings_of_aeon.items.DevilsFortuneItem;
-import keno.net.rings_of_aeon.items.FragmenPolearmItem;
+import keno.net.rings_of_aeon.items.TabletOfWealthItem;
+import keno.net.rings_of_aeon.items.weapon.BloodRushItem;
+import keno.net.rings_of_aeon.items.weapon.DevilsFortuneItem;
+import keno.net.rings_of_aeon.items.weapon.FragmenPolearmItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -31,9 +33,15 @@ public class RCCommonRegistry {
     // Materials
     public static final Item BROKEN_POLEARM = registerItem("broken_polearm",
             new Item(new FabricItemSettings().fireproof()));
-    public static final Item TABLET_OF_WEALTH = registerBasicItem("tablet_of_wealth");
     public static final Item TATTERED_PAPER = registerBasicItem("tattered_paper");
-    
+    // Utility items
+    public static final Item TABLET_OF_WEALTH = registerItem("tablet_of_wealth",
+            new TabletOfWealthItem(new FabricItemSettings().maxCount(4).fireproof()));
+
+    //T H E  B O O K
+    public static final Item FRAGMEN_ARCHIVE_VOL_ONE = LavenderBookItem.registerForBook(
+            RuinousCall.modLoc("fragmen_research_archive_v1"),
+            new FabricItemSettings().maxCount(1));
     //Sherds
     public static final Item FRAGMEN_POTTERY_SHERD = registerBasicItem("fragmen_sherd");
     public static final Item CLOUD_OWL_POTTERY_SHERD = registerBasicItem("cloud_owl_sherd");

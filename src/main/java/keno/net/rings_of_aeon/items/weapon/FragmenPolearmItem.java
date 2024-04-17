@@ -1,4 +1,4 @@
-package keno.net.rings_of_aeon.items;
+package keno.net.rings_of_aeon.items.weapon;
 
 import keno.net.rings_of_aeon.RuinousCall;
 import keno.net.rings_of_aeon.registries.RCCommonRegistry;
@@ -84,18 +84,18 @@ public class FragmenPolearmItem extends SwordItem implements TimerAccess {
                 switch (stack.getNbt().getInt(COMBO)) {
                     case 5:
                         player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED,
-                                TimeConversion.secondsToTicks(15), 1));
+                                TimeConversion.secondsToTicks(15)));
                     case 10: {
                         player.removeStatusEffect(StatusEffects.SPEED);
-                        player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, TimeConversion.secondsToTicks(15), 2));
+                        player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, TimeConversion.secondsToTicks(15), 1));
                         player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, TimeConversion.secondsToTicks(15)));
                         break;
                     }
-                    case 15, 20, 25, 30: {
+                    case 15, 20: {
                         player.removeStatusEffect(StatusEffects.SPEED);
                         player.removeStatusEffect(StatusEffects.HASTE);
-                        player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, TimeConversion.secondsToTicks(10), 3));
-                        player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, TimeConversion.secondsToTicks(10), 2));
+                        player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, TimeConversion.secondsToTicks(10), 2));
+                        player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, TimeConversion.secondsToTicks(10), 1));
                     }
                 }
             }
@@ -122,7 +122,7 @@ public class FragmenPolearmItem extends SwordItem implements TimerAccess {
 
     //Damage getter & setter
     public void setSpearDamage(ItemStack stack, float damage) {
-        stack.getNbt().putFloat(POLEARM_DAMAGE, MathUtils.clamp(0f, damage, 30.0f));
+        stack.getNbt().putFloat(POLEARM_DAMAGE, MathUtils.clamp(0f, damage, 20.0f));
     }
 
     public float getSpearDamage(ItemStack stack) {
