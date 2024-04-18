@@ -17,23 +17,8 @@ public class ModItemGroup {
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.ruinous_call"))
                     .icon(() -> new ItemStack(RCCommonRegistry.RELIQUIA_PILLAR))
                     .entries(((displayContext, entries) -> {
-                        entries.add(RCCommonRegistry.RELIQUIA_PILLAR);
-                        entries.add(RCCommonRegistry.BLOOD_RUSH);
-                        entries.add(RCCommonRegistry.DEVIL_FORTUNE);
-                        entries.add(RCCommonRegistry.RELIQUIA_BRICKS);
-                        entries.add(RCCommonRegistry.RELIQUIA_STAIRS);
-                        entries.add(RCCommonRegistry.RELIQUIA_WALL);
-                        entries.add(RCCommonRegistry.RELIQUIA_SLAB);
-                        entries.add(RCCommonRegistry.FRAGMEN_POLEARM);
-                        entries.add(RCCommonRegistry.FRAGMEN_POTTERY_SHERD);
-                        entries.add(RCCommonRegistry.CLOUD_OWL_POTTERY_SHERD);
-                        entries.add(RCCommonRegistry.UNKNOWN_CAT_POTTERY_SHERD);
-                        entries.add(RCCommonRegistry.HUMAN_POTTERY_SHERD);
-                        entries.add(RCCommonRegistry.CLOUD_OWL_STATUE);
-                        entries.add(RCCommonRegistry.UNKNOWN_CAT_SKULL);
-                        entries.add(RCCommonRegistry.TABLET_OF_WEALTH);
-                        entries.add(RCCommonRegistry.ARCHIVIST_TABLE);
-                        entries.add(RCCommonRegistry.FRAGMEN_ARCHIVE_VOL_ONE);
+                        addBlocks(entries);
+                        addItems(entries);
                     })).build());
 
     public static final RegistryKey<ItemGroup> RUIN_CALL_KEY = getItemGroupKey(RUINOUS_CALL);
@@ -44,5 +29,30 @@ public class ModItemGroup {
 
     public static RegistryKey<ItemGroup> getItemGroupKey(ItemGroup group) {
         return Registries.ITEM_GROUP.getKey(group).get();
+    }
+
+    private static void addBlocks(ItemGroup.Entries entries) {
+        entries.add(RCCommonRegistry.ARCHIVIST_TABLE);
+        entries.add(RCCommonRegistry.UNKNOWN_CAT_SKULL);
+        entries.add(RCCommonRegistry.CLOUD_OWL_STATUE);
+        entries.add(RCCommonRegistry.RELIQUIA_BRICKS);
+        entries.add(RCCommonRegistry.RELIQUIA_STAIRS);
+        entries.add(RCCommonRegistry.RELIQUIA_SLAB);
+        entries.add(RCCommonRegistry.RELIQUIA_WALL);
+        entries.add(RCCommonRegistry.RELIQUIA_PILLAR);
+    }
+
+    private static void addItems(ItemGroup.Entries entries) {
+        entries.add(RCCommonRegistry.FRAGMEN_ARCHIVE_VOL_ONE);
+        entries.add(RCCommonRegistry.TABLET_OF_WEALTH);
+        entries.add(RCCommonRegistry.HUMAN_POTTERY_SHERD);
+        entries.add(RCCommonRegistry.UNKNOWN_CAT_POTTERY_SHERD);
+        entries.add(RCCommonRegistry.CLOUD_OWL_POTTERY_SHERD);
+        entries.add(RCCommonRegistry.FRAGMEN_POTTERY_SHERD);
+        entries.add(RCCommonRegistry.BLOOD_RUSH);
+        entries.add(RCCommonRegistry.FRAGMEN_POLEARM);
+        entries.add(RCCommonRegistry.BROKEN_POLEARM);
+        entries.add(RCCommonRegistry.DEVIL_FORTUNE);
+        entries.add(RCCommonRegistry.TATTERED_PAPER);
     }
 }

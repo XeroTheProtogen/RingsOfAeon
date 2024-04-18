@@ -1,5 +1,6 @@
 package keno.net.rings_of_aeon;
 
+import keno.net.rings_of_aeon.effects.RCStatusEffects;
 import keno.net.rings_of_aeon.items.ModItemGroup;
 import keno.net.rings_of_aeon.registries.RCCommonRegistry;
 import keno.net.rings_of_aeon.registries.RCVillagerTypes;
@@ -22,6 +23,7 @@ public class RuinousCall implements ModInitializer {
         RCVillagerTypes.register();
         RCVillagerTrades.registerTrades();
         ModItemGroup.registerItemGroups();
+        RCStatusEffects.registerEffects();
     }
 
     public static Identifier modLoc(String location) {

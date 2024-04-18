@@ -1,5 +1,6 @@
 package keno.net.rings_of_aeon.items;
 
+import keno.net.rings_of_aeon.effects.RCStatusEffects;
 import keno.net.rings_of_aeon.util.TimeConversion;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -27,21 +28,19 @@ public class TabletOfWealthItem extends Item {
     }
 
     private void applyEffect(PlayerEntity user) {
-        //TODO add custom effect references
-        // Luck is a placeholder for a custom effect I plan on making
-        StatusEffect wealthEffect = StatusEffects.LUCK;
-        if (!user.hasStatusEffect(wealthEffect)) {
-            StatusEffectInstance wealthInstance = new StatusEffectInstance(wealthEffect, TimeConversion.secondsToTicks(30));
+        StatusEffect wealthy = RCStatusEffects.WEALTHY;
+        if (!user.hasStatusEffect(wealthy)) {
+            StatusEffectInstance wealthInstance = new StatusEffectInstance(wealthy, TimeConversion.secondsToTicks(30));
             user.addStatusEffect(wealthInstance);
             user.getItemCooldownManager().set(this, TimeConversion.secondsToTicks(2));
-        } else if (user.hasStatusEffect(wealthEffect) && user.getStatusEffect(wealthEffect).getAmplifier() < 3) {
+        } else if (user.hasStatusEffect(wealthy) && user.getStatusEffect(wealthy).getAmplifier() < 3) {
             StatusEffectInstance previousInstance = user.getStatusEffect(StatusEffects.LUCK);
             StatusEffectInstance currentInstance = new StatusEffectInstance(previousInstance.getEffectType(),
                     previousInstance.getDuration() + TimeConversion.secondsToTicks(30), previousInstance.getAmplifier() + 1);
             user.addStatusEffect(currentInstance);
-            user.getItemCooldownManager().set(this, TimeConversion.secondsToTicks(2));
+            user.getItemCooldownManager().set(this, TimeConversion.secondsToTicks(1));
         }
-        if (user.hasStatusEffect(wealthEffect) && user.getStatusEffect(wealthEffect).getAmplifier() < 3) {
+        if (user.hasStatusEffect(wealthy) && user.getStatusEffect(wealthy).getAmplifier() < 3) {
             user.getMainHandStack().decrement(1);
         }
     }

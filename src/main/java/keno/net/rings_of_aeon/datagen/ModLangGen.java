@@ -1,6 +1,7 @@
 package keno.net.rings_of_aeon.datagen;
 
 import keno.net.rings_of_aeon.RuinousCall;
+import keno.net.rings_of_aeon.effects.RCStatusEffects;
 import keno.net.rings_of_aeon.items.ModItemGroup;
 import keno.net.rings_of_aeon.registries.RCCommonRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -51,6 +52,7 @@ public class ModLangGen extends FabricLanguageProvider {
 
     private void generateMiscLang(TranslationBuilder builder) {
         builder.add("entity.minecraft.villager.archivist", "Archivist");
+        builder.add(RCStatusEffects.WEALTHY, "Wealthy");
     }
 
     private void generateEMIInfoLang(TranslationBuilder builder) {
