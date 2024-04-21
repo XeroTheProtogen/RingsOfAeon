@@ -21,6 +21,9 @@ public class ModModelsGen extends FabricModelProvider {
         reliquiaBrickTexturePool.stairs(RCCommonRegistry.RELIQUIA_STAIRS);
         reliquiaBrickTexturePool.slab(RCCommonRegistry.RELIQUIA_SLAB);
         reliquiaBrickTexturePool.wall(RCCommonRegistry.RELIQUIA_WALL);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(RCCommonRegistry.ALTAR_OF_WEALTH);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(RCCommonRegistry.CLOUD_OWL_STATUE);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(RCCommonRegistry.UNKNOWN_CAT_SKULL);
     }
 
     @Override

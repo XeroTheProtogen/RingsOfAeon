@@ -2,6 +2,7 @@ package keno.net.rings_of_aeon.registries;
 
 import io.wispforest.lavender.book.LavenderBookItem;
 import keno.net.rings_of_aeon.RuinousCall;
+import keno.net.rings_of_aeon.blocks.AltarOfWealthBlock;
 import keno.net.rings_of_aeon.blocks.CloudOwlStatueBlock;
 import keno.net.rings_of_aeon.blocks.UnknownCatSkullBlock;
 import keno.net.rings_of_aeon.items.TabletOfWealthItem;
@@ -68,7 +69,10 @@ public class RCCommonRegistry {
     public static final Block UNKNOWN_CAT_SKULL = registerBlock("unknown_cat_skull",
             new UnknownCatSkullBlock(FabricBlockSettings.copyOf(Blocks.STONE).dynamicBounds()
                     .nonOpaque().sounds(BlockSoundGroup.BONE).requiresTool()));
-
+    //Tile entity blocks
+    public static final Block ALTAR_OF_WEALTH = registerBlock("altar_of_wealth",
+            new AltarOfWealthBlock(FabricBlockSettings.copyOf(Blocks.STONE).strength(2.0f).nonOpaque()));
+    //Methods
     private static Item registerBasicItem(String name) {
         // If an item doesn't need any special settings or custom Item subclass (Example: Crafting materials),
         // register here

@@ -1,5 +1,9 @@
 {
   "variants": {
+    "facing=east": {
+      "model": "rings_of_aeon:block/cloud_owl_statue",
+      "y": 90
+    },
     "facing=north": {
       "model": "rings_of_aeon:block/cloud_owl_statue"
     },
@@ -10,10 +14,6 @@
     "facing=west": {
       "model": "rings_of_aeon:block/cloud_owl_statue",
       "y": 270
-    },
-    "facing=east": {
-      "model": "rings_of_aeon:block/cloud_owl_statue",
-      "y": 90
     }
   }
 }

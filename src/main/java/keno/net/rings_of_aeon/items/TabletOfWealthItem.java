@@ -34,7 +34,7 @@ public class TabletOfWealthItem extends Item {
             user.addStatusEffect(wealthInstance);
             user.getItemCooldownManager().set(this, TimeConversion.secondsToTicks(2));
         } else if (user.hasStatusEffect(wealthy) && user.getStatusEffect(wealthy).getAmplifier() < 3) {
-            StatusEffectInstance previousInstance = user.getStatusEffect(StatusEffects.LUCK);
+            StatusEffectInstance previousInstance = user.getStatusEffect(wealthy);
             StatusEffectInstance currentInstance = new StatusEffectInstance(previousInstance.getEffectType(),
                     previousInstance.getDuration() + TimeConversion.secondsToTicks(30), previousInstance.getAmplifier() + 1);
             user.addStatusEffect(currentInstance);

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "rings_of_aeon:block/altar_of_wealth",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "rings_of_aeon:block/altar_of_wealth"
+    },
+    "facing=south": {
+      "model": "rings_of_aeon:block/altar_of_wealth",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "rings_of_aeon:block/altar_of_wealth",
+      "y": 270
+    }
+  }
+}

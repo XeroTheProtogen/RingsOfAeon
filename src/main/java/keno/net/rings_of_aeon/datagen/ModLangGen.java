@@ -48,6 +48,7 @@ public class ModLangGen extends FabricLanguageProvider {
         builder.add(RCCommonRegistry.CLOUD_OWL_STATUE, "Cloud Owl Statue");
         builder.add(RCCommonRegistry.UNKNOWN_CAT_SKULL, "Unknown Cat Skull");
         builder.add(RCCommonRegistry.ARCHIVIST_TABLE, "Archivist Table");
+        builder.add(RCCommonRegistry.ALTAR_OF_WEALTH, "Altar Of Wealth");
     }
 
     private void generateMiscLang(TranslationBuilder builder) {

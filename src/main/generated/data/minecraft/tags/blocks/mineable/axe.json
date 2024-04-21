@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "rings_of_aeon:archivist_table"
+    "rings_of_aeon:archivist_table",
+    "rings_of_aeon:cloud_owl_statue"
   ]
 }

@@ -62,6 +62,16 @@ public class ModRecipeGen extends FabricRecipeProvider {
                 .criterion(hasItem(RCCommonRegistry.RELIQUIA_BRICKS), conditionsFromItem(RCCommonRegistry.RELIQUIA_BRICKS))
                 .offerTo(exporter, new Identifier(getRecipeName(RCCommonRegistry.RELIQUIA_PILLAR)));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, RCCommonRegistry.ALTAR_OF_WEALTH, 1)
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("ABA")
+                .input('A', Items.STONE)
+                .input('B', Items.GOLD_INGOT)
+                .input('C', RCCommonRegistry.TABLET_OF_WEALTH)
+                .criterion(hasItem(RCCommonRegistry.TABLET_OF_WEALTH), conditionsFromItem(RCCommonRegistry.TABLET_OF_WEALTH))
+                .offerTo(exporter, new Identifier(getRecipeName(RCCommonRegistry.ALTAR_OF_WEALTH)));
+
         //Blocks which have cookie-cutter recipes will either use fabric's offer methods or custom offer methods
         offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, RCCommonRegistry.RELIQUIA_SLAB, RCCommonRegistry.RELIQUIA_BRICKS);
         offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, RCCommonRegistry.RELIQUIA_WALL, RCCommonRegistry.RELIQUIA_BRICKS);
