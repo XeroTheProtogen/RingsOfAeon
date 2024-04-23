@@ -1,11 +1,12 @@
 package keno.net.rings_of_aeon.blocks.entities;
 
-import keno.net.rings_of_aeon.RuinousCall;
+import keno.net.rings_of_aeon.blocks.AltarOfWealthBlock;
 import keno.net.rings_of_aeon.registries.RCTileEntities;
 import keno.net.rings_of_aeon.effects.RCStatusEffects;
 import keno.net.rings_of_aeon.util.ImplementedInventory;
 import keno.net.rings_of_aeon.util.TimeConversion;
 import keno.net.rings_of_aeon.util.TimerAccess;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -61,7 +62,7 @@ public class AltarOfWealthTileEntity extends BlockEntity implements ImplementedI
     }
 
     public void tick(World world, BlockPos pos, BlockState state) {
-        if (!world.isClient()) {
+        if (!world.isClient() && state.getBlock() instanceof AltarOfWealthBlock altar) {
             if (invHasItems()) {
                 if (--this.ticks <= 0) {
                     ringsOfAeonSetTimer(TimeConversion.minutesToTicks(5));
@@ -72,6 +73,7 @@ public class AltarOfWealthTileEntity extends BlockEntity implements ImplementedI
                     inventory.get(0).decrement(1);
                     world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.9f, 0.8f, true);
                     world.addParticle(ParticleTypes.ASH.getType(), pos.getX(), pos.getY(), pos.getZ(), 0.5f, 0.5f, 0.5f);
+                    world.setBlockState(pos, altar.setItems(inventory.get(0).getCount()), Block.NOTIFY_LISTENERS);
                 }
                 List<? extends PlayerEntity> players = world.getPlayers();
                 for (PlayerEntity player : players) {

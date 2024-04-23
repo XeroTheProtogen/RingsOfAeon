@@ -13,6 +13,7 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.BlockMirror;
@@ -26,6 +27,8 @@ import org.jetbrains.annotations.Nullable;
 
 public class AltarOfWealthBlock extends BlockWithEntity implements BlockEntityProvider {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
+    public static final IntProperty ITEMS = IntProperty.of("items", 0, 4);
+
     public AltarOfWealthBlock(Settings settings) {
         super(settings);
     }
@@ -44,6 +47,7 @@ public class AltarOfWealthBlock extends BlockWithEntity implements BlockEntityPr
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(FACING);
+        builder.add(ITEMS);
     }
 
     @Override
@@ -79,6 +83,7 @@ public class AltarOfWealthBlock extends BlockWithEntity implements BlockEntityPr
                 if (!heldItem.isEmpty() && heldItem.getItem() == RCCommonRegistry.TABLET_OF_WEALTH) {
                     setAltarToPlayerItem(player.getStackInHand(hand).copy(), altar.inventory);
                     player.getStackInHand(hand).decrement(1);
+                    world.setBlockState(pos, this.setItems(altar.inventory.get(0).getCount()), Block.NOTIFY_LISTENERS);
                 }
             }
         }
@@ -104,5 +109,13 @@ public class AltarOfWealthBlock extends BlockWithEntity implements BlockEntityPr
         } else {
             altarInventory.get(0).increment(1);
         }
+    }
+
+    public IntProperty getItemsProperty() {
+        return ITEMS;
+    }
+
+    public BlockState setItems(int items) {
+        return this.getDefaultState().with(this.getItemsProperty(), items);
     }
 }
