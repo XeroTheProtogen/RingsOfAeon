@@ -3,6 +3,8 @@ package keno.net.rings_of_aeon;
 import dev.thomasglasser.sherdsapi.api.data.FabricSherdDatagenSuite;
 import keno.net.rings_of_aeon.datagen.*;
 import keno.net.rings_of_aeon.registries.RCCommonRegistry;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;

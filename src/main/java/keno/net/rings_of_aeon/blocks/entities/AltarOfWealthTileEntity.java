@@ -16,6 +16,9 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -26,6 +29,7 @@ import java.util.List;
 public class AltarOfWealthTileEntity extends BlockEntity implements ImplementedInventory, TimerAccess {
     public DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
     private int ticks;
+
     public AltarOfWealthTileEntity(BlockPos pos, BlockState state) {
         super(RCTileEntities.ALTAR_OF_WEALTH, pos, state);
     }
@@ -53,28 +57,29 @@ public class AltarOfWealthTileEntity extends BlockEntity implements ImplementedI
     }
 
     public boolean invHasItems() {
-        return this.inventory.get(0) != ItemStack.EMPTY;
+        return !this.inventory.get(0).isEmpty() || this.inventory.get(0).getCount() > 0;
     }
 
     public void tick(World world, BlockPos pos, BlockState state) {
         if (!world.isClient()) {
             if (invHasItems()) {
-                RuinousCall.LOGGER.info("true");
-                if (this.ticks <= 0) {
+                if (--this.ticks <= 0) {
                     ringsOfAeonSetTimer(TimeConversion.minutesToTicks(5));
-                    this.inventory.get(0).decrement(1);
                 }
             }
-            if (this.ticks-- > 0) {
-                RuinousCall.LOGGER.info(this.ticks + "");
+            if (this.ticks > 0) {
+                if (this.ticks == 10) {
+                    inventory.get(0).decrement(1);
+                    world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.9f, 0.8f, true);
+                    world.addParticle(ParticleTypes.ASH.getType(), pos.getX(), pos.getY(), pos.getZ(), 0.5f, 0.5f, 0.5f);
+                }
                 List<? extends PlayerEntity> players = world.getPlayers();
                 for (PlayerEntity player : players) {
-                    boolean isNear = player.getBlockPos().isWithinDistance(pos, 32.0d);
-                    boolean isGoingAway = player.getBlockPos().isWithinDistance(pos, 48.0D) && !isNear;
+                    boolean isNear = player.getBlockPos().isWithinDistance(pos, 64.0d);
+                    boolean isGoingAway = player.getBlockPos().isWithinDistance(pos, 70.0d);
                     if (isNear) {
                         player.addStatusEffect(new StatusEffectInstance(RCStatusEffects.WEALTHY, TimeConversion.minutesToTicks(5)));
-                    }
-                    if (player.hasStatusEffect(RCStatusEffects.WEALTHY) && isGoingAway) {
+                    } else if (player.hasStatusEffect(RCStatusEffects.WEALTHY) && isGoingAway) {
                         player.removeStatusEffect(RCStatusEffects.WEALTHY);
                     }
                 }

@@ -77,7 +77,7 @@ public class AltarOfWealthBlock extends BlockWithEntity implements BlockEntityPr
             if (tabletsInAltar.getCount() < 4) {
                 ItemStack heldItem = player.getStackInHand(hand);
                 if (!heldItem.isEmpty() && heldItem.getItem() == RCCommonRegistry.TABLET_OF_WEALTH) {
-                    setAltarToPlayerItem(heldItem, altar.inventory);
+                    setAltarToPlayerItem(player.getStackInHand(hand).copy(), altar.inventory);
                     player.getStackInHand(hand).decrement(1);
                 }
             }
@@ -99,6 +99,7 @@ public class AltarOfWealthBlock extends BlockWithEntity implements BlockEntityPr
 
     private void setAltarToPlayerItem(ItemStack stack, DefaultedList<ItemStack> altarInventory) {
         if (altarInventory.get(0).isEmpty()) {
+            stack.setCount(1);
             altarInventory.set(0, stack);
         } else {
             altarInventory.get(0).increment(1);

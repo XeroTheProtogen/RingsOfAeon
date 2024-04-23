@@ -40,6 +40,7 @@ public class ModItemGroup {
         entries.add(RCCommonRegistry.RELIQUIA_SLAB);
         entries.add(RCCommonRegistry.RELIQUIA_WALL);
         entries.add(RCCommonRegistry.RELIQUIA_PILLAR);
+        entries.add(RCCommonRegistry.ALTAR_OF_WEALTH);
     }
 
     private static void addItems(ItemGroup.Entries entries) {
