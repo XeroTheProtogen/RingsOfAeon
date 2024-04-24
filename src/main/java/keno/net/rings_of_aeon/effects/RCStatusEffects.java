@@ -13,7 +13,7 @@ public class RCStatusEffects {
             new WealthyEffect(StatusEffectCategory.BENEFICIAL, 0xFFD700)
                     .addAttributeModifier(EntityAttributes.GENERIC_LUCK,
                             "0acf4040-c2c4-4b46-b995-55e8c77b244f",
-                            1f, EntityAttributeModifier.Operation.ADDITION));
+                            1.0f, EntityAttributeModifier.Operation.ADDITION));
 
     private static StatusEffect registerStatusEffect(String name, StatusEffect effect) {
         return Registry.register(Registries.STATUS_EFFECT, RuinousCall.modLoc(name), effect);
