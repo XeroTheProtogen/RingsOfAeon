@@ -65,13 +65,13 @@ public class RCCommonRegistry {
             new Block(FabricBlockSettings.copyOf(Blocks.BOOKSHELF).requiresTool()));
     public static final Block CLOUD_OWL_STATUE = registerBlock("cloud_owl_statue",
             new CloudOwlStatueBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).dynamicBounds()
-                    .burnable().nonOpaque()));
+                    .burnable().nonOpaque().requiresTool()));
     public static final Block UNKNOWN_CAT_SKULL = registerBlock("unknown_cat_skull",
             new UnknownCatSkullBlock(FabricBlockSettings.copyOf(Blocks.STONE).dynamicBounds()
                     .nonOpaque().sounds(BlockSoundGroup.BONE).requiresTool()));
     //Tile entity blocks
     public static final Block ALTAR_OF_WEALTH = registerBlock("altar_of_wealth",
-            new AltarOfWealthBlock(FabricBlockSettings.copyOf(Blocks.STONE).strength(2.0f).nonOpaque()));
+            new AltarOfWealthBlock(FabricBlockSettings.copyOf(Blocks.STONE).strength(2.0f).dynamicBounds().nonOpaque().requiresTool()));
     //Methods
     private static Item registerBasicItem(String name) {
         // If an item doesn't need any special settings or custom Item subclass (Example: Crafting materials),

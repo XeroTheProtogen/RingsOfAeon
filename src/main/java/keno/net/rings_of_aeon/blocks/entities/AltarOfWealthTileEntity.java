@@ -78,8 +78,8 @@ public class AltarOfWealthTileEntity extends BlockEntity implements ImplementedI
                 List<? extends PlayerEntity> players = world.getPlayers();
                 for (PlayerEntity player : players) {
                     boolean isNear = player.getBlockPos().isWithinDistance(pos, 64.0d);
-                    if (isNear && !player.hasStatusEffect(RCStatusEffects.WEALTHY)) {
-                        player.addStatusEffect(new StatusEffectInstance(RCStatusEffects.WEALTHY, TimeConversion.secondsToTicks(2)));
+                    if (isNear) {
+                        player.addStatusEffect(new StatusEffectInstance(RCStatusEffects.WEALTHY, TimeConversion.secondsToTicks(1)));
                     }
                 }
             }

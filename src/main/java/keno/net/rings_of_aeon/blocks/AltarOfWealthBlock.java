@@ -20,8 +20,12 @@ import net.minecraft.util.BlockMirror;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.collection.DefaultedList;
+import net.minecraft.util.function.BooleanBiFunction;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.util.shape.VoxelShapes;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -99,6 +103,14 @@ public class AltarOfWealthBlock extends BlockWithEntity implements BlockEntityPr
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         return validateTicker(type, RCTileEntities.ALTAR_OF_WEALTH,
                 (world1, pos, state1, blockEntity) -> blockEntity.tick(world1, pos, state1));
+    }
+
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return VoxelShapes.combineAndSimplify(
+                Block.createCuboidShape(0,0,0,16, 1, 16),
+                Block.createCuboidShape(6, 1, 6, 10, 15, 10),
+                BooleanBiFunction.OR);
     }
 
     private void setAltarToPlayerItem(ItemStack stack, DefaultedList<ItemStack> altarInventory) {
