@@ -77,8 +77,7 @@ public class AltarOfWealthBlock extends BlockWithEntity implements BlockEntityPr
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         BlockEntity tile = world.getBlockEntity(pos);
         if (tile instanceof AltarOfWealthTileEntity altar) {
-            ItemStack tabletsInAltar = altar.inventory.get(0);
-            if (tabletsInAltar.getCount() < 4) {
+            if (state.get(getItemsProperty()) < 4) {
                 ItemStack heldItem = player.getStackInHand(hand);
                 if (!heldItem.isEmpty() && heldItem.getItem() == RCCommonRegistry.TABLET_OF_WEALTH) {
                     setAltarToPlayerItem(player.getStackInHand(hand).copy(), altar.inventory);

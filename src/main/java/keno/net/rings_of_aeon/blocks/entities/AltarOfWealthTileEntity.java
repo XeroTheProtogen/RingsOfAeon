@@ -1,8 +1,8 @@
 package keno.net.rings_of_aeon.blocks.entities;
 
 import keno.net.rings_of_aeon.blocks.AltarOfWealthBlock;
-import keno.net.rings_of_aeon.registries.RCTileEntities;
 import keno.net.rings_of_aeon.effects.RCStatusEffects;
+import keno.net.rings_of_aeon.registries.RCTileEntities;
 import keno.net.rings_of_aeon.util.ImplementedInventory;
 import keno.net.rings_of_aeon.util.TimeConversion;
 import keno.net.rings_of_aeon.util.TimerAccess;
@@ -63,8 +63,8 @@ public class AltarOfWealthTileEntity extends BlockEntity implements ImplementedI
 
     public void tick(World world, BlockPos pos, BlockState state) {
         if (!world.isClient() && state.getBlock() instanceof AltarOfWealthBlock altar) {
-            if (invHasItems()) {
-                if (--this.ticks <= 0) {
+            if (--this.ticks <= 0) {
+                if (invHasItems()) {
                     ringsOfAeonSetTimer(TimeConversion.minutesToTicks(5));
                 }
             }
@@ -72,17 +72,14 @@ public class AltarOfWealthTileEntity extends BlockEntity implements ImplementedI
                 if (this.ticks == 10) {
                     inventory.get(0).decrement(1);
                     world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.9f, 0.8f, true);
-                    world.addParticle(ParticleTypes.ASH.getType(), pos.getX(), pos.getY(), pos.getZ(), 0.5f, 0.5f, 0.5f);
+                    world.addParticle(ParticleTypes.ASH.getType(), pos.getX(), pos.getY(), pos.getZ(), 1f, 1f, 1f);
                     world.setBlockState(pos, altar.setItems(inventory.get(0).getCount()), Block.NOTIFY_LISTENERS);
                 }
                 List<? extends PlayerEntity> players = world.getPlayers();
                 for (PlayerEntity player : players) {
                     boolean isNear = player.getBlockPos().isWithinDistance(pos, 64.0d);
-                    boolean isGoingAway = player.getBlockPos().isWithinDistance(pos, 70.0d);
-                    if (isNear) {
-                        player.addStatusEffect(new StatusEffectInstance(RCStatusEffects.WEALTHY, TimeConversion.minutesToTicks(5)));
-                    } else if (player.hasStatusEffect(RCStatusEffects.WEALTHY) && isGoingAway) {
-                        player.removeStatusEffect(RCStatusEffects.WEALTHY);
+                    if (isNear && !player.hasStatusEffect(RCStatusEffects.WEALTHY)) {
+                        player.addStatusEffect(new StatusEffectInstance(RCStatusEffects.WEALTHY, TimeConversion.secondsToTicks(2)));
                     }
                 }
             }
